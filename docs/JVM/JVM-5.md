@@ -17,7 +17,7 @@
 
 - **按线程数分**（垃圾回收线程数），可以分为串行垃圾回收器和并行垃圾回收器。
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414101822193.png" alt="image-20210414101822193" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2003%2059%201628507039%201628507039605%20DcWbio%20image-20210414101822193.png" alt="image-20210414101822193" style="zoom:33%;float:left" />
 
   1. 串行回收指的是在同一时间段内只允许有一个CPU用于执行垃圾回收操作，此时工作线程被暂停，直至垃圾收集工作结束。
      1. 在诸如单CPU处理器或者较小的应用内存等硬件平台不是特别优越的场合，串行回收器的性能表现可以超过并行回收器和并发回收器。所以，串行回收默认被应用在客户端的Client模式下的JVM中
@@ -62,7 +62,7 @@
   2. 这种情况下，应用程序能容忍较高的暂停时间，因此，高吞吐量的应用程序有更长的时间基准，快速响应是不必考虑的
   3. 吞吐量优先，意味着在单位时间内，STW的时间最短：0.2+0.2=0.4
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414102611848.png" alt="image-20210414102611848" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2002%201628507042%201628507042430%20MyO3yn%20image-20210414102611848.png" alt="image-20210414102611848" style="zoom:33%;float:left" />
 
 - **暂停时间**
 
@@ -70,7 +70,7 @@
     - 例如，GC期间100毫秒的暂停时间意味着在这100毫秒期间内没有应用程序线程是活动的
   - 暂停时间优先，意味着尽可能让单次STW的时间最短：0.1+0.1 + 0.1+ 0.1+ 0.1=0.5，但是总的GC时间可能会长
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414102726892.png" alt="image-20210414102726892" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2003%201628507043%201628507043285%20nJ2hmc%20image-20210414102726892.png" alt="image-20210414102726892" style="zoom:33%;float:left" />
 
 - **吞吐量 vs 暂停时间**
   1. **高吞吐量较好**因为这会让应用程序的最终用户感觉只有应用程序线程在做“生产性”工作。直觉上，吞吐量越高程序运行越快。
@@ -111,11 +111,11 @@
 2. 并行回收器：ParNew、Parallel Scavenge、Parallel old
 3. 并发回收器：CMS、G1
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414103150008.png" alt="image-20210414103150008" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2005%201628507045%201628507045453%20A69uSY%20image-20210414103150008.png" alt="image-20210414103150008" style="zoom:33%;float:left" />
 
 - **7款经典回收器与垃圾分代之间的关系**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414103220214.png" alt="image-20210414103220214" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2007%201628507047%201628507047046%203D2lqV%20image-20210414103220214.png" alt="image-20210414103220214" style="zoom:33%;float:left" />
 
 1. 新生代收集器：Serial、ParNew、Parallel Scavenge；
 2. 老年代收集器：Serial old、Parallel old、CMS；
@@ -125,7 +125,7 @@
 
 #### p3: 垃圾收集器的组合关系
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414103257255.png" alt="image-20210414103257255" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2007%201628507047%201628507047817%20nkaSZ6%20image-20210414103257255.png" alt="image-20210414103257255" style="zoom:33%;float:left" />
 
 1. 两个收集器间有连线，表明它们可以搭配使用：
    - Serial/Serial old
@@ -174,11 +174,11 @@ jinfo -flag UseParallelOldGC 进程id
 
 JDK 8 中默认使用 ParallelGC 和 ParallelOldGC 的组合
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414103348700.png" alt="image-20210414103348700" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2009%201628507049%201628507049054%20ROZEbQ%20image-20210414103348700.png" alt="image-20210414103348700" style="zoom:33%;float:left" />
 
 - **JDK 9** 
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414103410554.png" alt="image-20210414103410554" style="zoom:33%;" />	
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2009%201628507049%201628507049784%20CgfUNK%20image-20210414103410554.png" alt="image-20210414103410554" style="zoom:33%;" />	
 
 
 
@@ -194,7 +194,7 @@ JDK 8 中默认使用 ParallelGC 和 ParallelOldGC 的组合
 
 这个收集器是一个单线程的收集器，“单线程”的意义：它只会使用一个CPU（串行）或一条收集线程去完成垃圾收集工作。更重要的是在它进行垃圾收集时，必须暂停其他所有的工作线程，直到它收集结束（Stop The World）
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414112907380.png" alt="image-20210414112907380" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2010%201628507050%201628507050544%20zHEHIm%20image-20210414112907380.png" alt="image-20210414112907380" style="zoom:33%;float:left" />
 
 **Serial 回收器的优势**
 
@@ -217,7 +217,7 @@ JDK 8 中默认使用 ParallelGC 和 ParallelOldGC 的组合
 2. ParNew 收集器除了采用**并行回收**的方式执行内存回收外，两款垃圾收集器之间几乎没有任何区别。ParNew收集器在年轻代中同样也是采用复制算法、"Stop-the-World"机制。
 3. ParNew 是很多JVM运行在Server模式下新生代的默认垃圾收集器。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414113307553.png" alt="image-20210414113307553" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2011%201628507051%201628507051430%20eYwH9u%20image-20210414113307553.png" alt="image-20210414113307553" style="zoom:33%;float:left" />
 
 1. 对于新生代，回收次数频繁，使用并行方式高效。
 2. 对于老年代，回收次数少，使用串行方式节省资源。（CPU并行需要切换线程，串行可以省去切换线程的资源）
@@ -251,7 +251,7 @@ A：**不能**
 4. Parallel收集器在JDK1.6时提供了用于执行老年代垃圾收集的Parallel Old收集器，用来代替老年代的Serial Old收集器。
 5. Parallel Old收集器采用了标记-压缩算法，但同样也是基于并行回收和"Stop-the-World"机制。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414113402547.png" alt="image-20210414113402547" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2012%201628507052%201628507052362%20gDcq3k%20image-20210414113402547.png" alt="image-20210414113402547" style="zoom:33%;float:left" />
 
 1. 在程序吞吐量优先的应用场景中，Parallel收集器和Parallel Old收集器的组合，在server模式下的内存回收性能很不错。
 2. **在Java8中，默认是此垃圾收集器。**
@@ -296,7 +296,7 @@ A：**不能**
 
 #### p2: CMS工作原理
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414203127682.png" alt="image-20210414203127682" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2013%201628507053%201628507053476%20Zs9DUg%20image-20210414203127682.png" alt="image-20210414203127682" style="zoom:33%;float:left" />
 
 CMS整个过程比之前的收集器要复杂，整个过程分为4个主要阶段，即初始标记阶段、并发标记阶段、重新标记阶段和并发清除阶段。(涉及STW的阶段主要是：初始标记 和 重新标记)
 
@@ -314,7 +314,7 @@ CMS整个过程比之前的收集器要复杂，整个过程分为4个主要阶�
 3. 另外，由于在垃圾收集阶段用户线程没有中断，所以在CMS回收过程中，还应该确保应用程序用户线程有足够的内存可用。因此，CMS收集器不能像其他收集器那样等到老年代几乎完全被填满了再进行收集，**而是当堆内存使用率达到某一阈值时，便开始进行回收**，以确保应用程序在CMS工作过程中依然有足够的空间支持应用程序运行。要是CMS运行期间预留的内存无法满足程序需要，就会出现一次**“Concurrent Mode Failure”** 失败，这时虚拟机将启动后备预案：临时启用Serial old收集器来重新进行老年代的垃圾收集，这样停顿时间就很长了。
 4. CMS收集器的垃圾收集算法采用的是**标记清除算法**，这意味着每次执行完内存回收后，由于被执行内存回收的无用对象所占用的内存空间极有可能是不连续的一些内存块，**不可避免地将会产生一些内存碎片**。那么CMS在为新对象分配内存空间时，将无法使用指针碰撞（Bump the Pointer）技术，而只能够选择空闲列表（Free List）执行内存分配。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414203318703.png" alt="image-20210414203318703" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2014%201628507054%201628507054423%20hQy9hS%20image-20210414203318703.png" alt="image-20210414203318703" style="zoom:33%;float:left" />
 
 **为什么 CMS 不采用标记-压缩算法呢？**
 
@@ -409,11 +409,11 @@ HotSpot有这么多的垃圾回收器，那么如果有人问，Serial GC、Para
 
 G1的分代，已经不是下面这样的了
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210417195946638.png" alt="image-20210417195946638" style="zoom:26%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2015%201628507055%201628507055585%20KWVG14%20image-20210417195946638.png" alt="image-20210417195946638" style="zoom:26%;float:left" />
 
 G1的分区是这样的一个区域
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210417200024470.png" alt="image-20210417200024470" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2017%201628507057%201628507057129%20ikdKUT%20image-20210417200024470.png" alt="image-20210417200024470" style="zoom:33%;float:left" />
 
 **空间整合**
 
@@ -499,7 +499,7 @@ G1中提供了三种垃圾回收模式：YoungGC、Mixed GC和Full GC，在不�
    >
    > 如图所示，可以将区域分配到Eden，幸存者和旧时代区域。 此外，还有第四种类型的物体被称为巨大区域。 这些区域旨在容纳标准区域大小的50％或更大的对象。 它们存储为一组连续区域。 最后，最后一种区域类型是堆的未使用区域。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210417200359128.png" alt="image-20210417200359128" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2018%201628507058%201628507058024%20p2SOcz%20image-20210417200359128.png" alt="image-20210417200359128" style="zoom:33%;float:left" />
 
 **设置 H 的原因**
 
@@ -507,7 +507,7 @@ G1中提供了三种垃圾回收模式：YoungGC、Mixed GC和Full GC，在不�
 
 **Regio的细节**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210417200419160.png" alt="image-20210417200419160" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2018%201628507058%201628507058994%20ZVQqPk%20image-20210417200419160.png" alt="image-20210417200419160" style="zoom:33%;float:left" />
 
 1. 每个Region都是通过指针碰撞来分配空间
 2. G1为每一个Region设 计了两个名为TAMS（Top at Mark Start）的指针，把Region中的一部分空间划分出来用于并发回收过程中的新对象分配，并发回收时新分配的对象地址都必须要在这两个指针位置以上。
@@ -524,7 +524,7 @@ G1 GC的垃圾回收过程主要包括如下三个环节：
 - 混合回收（Mixed GC）
 - （如果需要，单线程、独占式、高强度的Full GC还是继续存在的。它针对GC的评估失败提供了一种失败保护机制，即强力回收。）
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210417200504715.png" alt="image-20210417200504715" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2019%201628507059%201628507059842%201j2Jyr%20image-20210417200504715.png" alt="image-20210417200504715" style="zoom:33%;float:left" />
 
 顺时针，Young GC --> Young GC+Concurrent Marking --> Mixed GC顺序，进行垃圾回收
 
@@ -555,7 +555,7 @@ G1 GC的垃圾回收过程主要包括如下三个环节：
 5. 如果不同，通过CardTable把相关引用信息记录到引用指向对象的所在Region对应的Remembered Set中；
 6. 当进行垃圾收集时，在GC根节点的枚举范围加入Remembered Set；就可以保证不进行全局扫描，也不会有遗漏。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210417200617342.png" alt="image-20210417200617342" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2020%201628507060%201628507060749%20r6kg2V%20image-20210417200617342.png" alt="image-20210417200617342" style="zoom:33%;float:left" />
 
 1. 在回收 Region 时，为了不进行全堆的扫描，引入了 Remembered Set
 2. Remembered Set 记录了当前 Region 中的对象被哪个对象引用了
@@ -568,7 +568,7 @@ G1 GC的垃圾回收过程主要包括如下三个环节：
 2. 年轻代回收只回收Eden区和Survivor区
 3. YGC时，首先G1停止应用程序的执行（Stop-The-World），G1创建回收集（Collection Set），回收集是指需要被回收的内存分段的集合，年轻代回收过程的回收集包含年轻代Eden区和Survivor区所有的内存分段。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210417200709589.png" alt="image-20210417200709589" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2021%201628507061%201628507061702%20d0x2l3%20image-20210417200709589.png" alt="image-20210417200709589" style="zoom:33%;float:left" />
 
 图的大致意思就是：
 
@@ -632,7 +632,7 @@ G1 GC的垃圾回收过程主要包括如下三个环节：
 
 当越来越多的对象晋升到老年代Old Region时，为了避免堆内存被耗尽，虚拟机会触发一个混合的垃圾收集器，即Mixed GC，该算法并不是一个Old GC，除了回收整个Young Region，还会回收一部分的Old Region。这里需要注意：是一部分老年代，而不是全部老年代。可以选择哪些Old Region进行收集，从而可以对垃圾回收的耗时时间进行控制。也要注意的是Mixed GC并不是Full GC。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210417203939359.png" alt="image-20210417203939359" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2023%201628507063%201628507063125%20KtM3jt%20image-20210417203939359.png" alt="image-20210417203939359" style="zoom:33%;float:left" />
 
 **混合回收的细节**
 
@@ -673,7 +673,7 @@ G1 GC的垃圾回收过程主要包括如下三个环节：
 
 `截止JDK1.8，一共有7款不同的垃圾收集器。每一款的垃圾收集器都有不同的特点，在具体使用的时候，需要根据具体的情况选用不同的垃圾收集器。`
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101110395.png" alt="image-20210419101110395" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2024%201628507064%201628507064398%203mF5A9%20image-20210419101110395.png" alt="image-20210419101110395" style="zoom:33%;float:left" />
 
 **发展阶段:** Serial => Parallel(并行) => CMS(并发) => G1 => ZGC
 
@@ -732,11 +732,11 @@ Java垃圾收集器的配置对于JVM优化来说是一个很重要的选择，�
 
 2、这个只会显示总的GC堆的变化，如下：
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101354938.png" alt="image-20210419101354938" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2025%201628507065%201628507065776%20Z94gAg%20image-20210419101354938.png" alt="image-20210419101354938" style="zoom:33%;float:left" />
 
 3、参数解析
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101424212.png" alt="image-20210419101424212" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2026%201628507066%201628507066511%20iP5inD%20image-20210419101424212.png" alt="image-20210419101424212" style="zoom:33%;float:left" />
 
 > **PrintGCDetails**
 
@@ -748,11 +748,11 @@ Java垃圾收集器的配置对于JVM优化来说是一个很重要的选择，�
 
 2、输入信息如下
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101459173.png" alt="image-20210419101459173" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2027%201628507067%201628507067273%20yJbROb%20image-20210419101459173.png" alt="image-20210419101459173" style="zoom:33%;float:left" />
 
 3、参数解析
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101522681.png" alt="image-20210419101522681" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2028%201628507068%201628507068299%20ACpeki%20image-20210419101522681.png" alt="image-20210419101522681" style="zoom:33%;float:left" />
 
 > **PrintGCTimestamps 和 PrintGCDatestamps**
 
@@ -764,7 +764,7 @@ Java垃圾收集器的配置对于JVM优化来说是一个很重要的选择，�
 
 2、输出信息如下
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101544558.png" alt="image-20210419101544558" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2030%201628507070%201628507070054%20hEfoyG%20image-20210419101544558.png" alt="image-20210419101544558" style="zoom:33%;float:left" />
 
 3、说明：日志带上了日期和时间
 
@@ -786,11 +786,11 @@ Java垃圾收集器的配置对于JVM优化来说是一个很重要的选择，�
 
 ##### D1: Young GC
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101702023.png" alt="image-20210419101702023" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2033%201628507073%201628507073150%20tatlBj%20image-20210419101702023.png" alt="image-20210419101702023" style="zoom:33%;float:left" />
 
 ##### D2: Full GC
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101728379.png" alt="image-20210419101728379" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2034%201628507074%201628507074433%204SARRW%20image-20210419101728379.png" alt="image-20210419101728379" style="zoom:33%;float:left" />
 
 **🐴代码举例**
 
@@ -820,11 +820,11 @@ public class GCLogTest1 {
 
 1、首先我们会将3个2M的数组存放到Eden区，然后后面4M的数组来了后，将无法存储，因为Eden区只剩下2M的剩余空间了，那么将会进行一次Young GC操作，将原来Eden区的内容，存放到Survivor区，但是Survivor区也存放不下，那么就会直接晋级存入Old 区
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101810597.png" alt="image-20210419101810597" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2035%201628507075%201628507075532%20lhih80%20image-20210419101810597.png" alt="image-20210419101810597" style="zoom:33%;float:left" />
 
 2、然后我们将4M对象存入到Eden区中
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101831979.png" alt="image-20210419101831979" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2036%201628507076%201628507076983%2065oYJj%20image-20210419101831979.png" alt="image-20210419101831979" style="zoom:33%;float:left" />
 
 老年代图画的有问题，free应该是4M
 
@@ -846,7 +846,7 @@ Heap
 Process finished with exit code 0
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419101900822.png" alt="image-20210419101900822" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2038%201628507078%201628507078472%20Ga2XDm%20image-20210419101900822.png" alt="image-20210419101900822" style="zoom:33%;float:left" />
 
 与 JDK7 不同的是，JDK8 直接判定 4M 的数组为大对象，直接怼到老年区去了
 
@@ -866,9 +866,9 @@ GCViewer、GCEasy、GCHisto、GCLogViewer、Hpjmeter、garbagecat等
 
 在线分析网址：gceasy.io
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419102202854.png" alt="image-20210419102202854" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2040%201628507080%201628507080275%20Oq4MOH%20image-20210419102202854.png" alt="image-20210419102202854" style="zoom:33%;" />
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419102214166.png" alt="image-20210419102214166" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2041%201628507081%201628507081201%20EkPyzj%20image-20210419102214166.png" alt="image-20210419102214166" style="zoom:33%;" />
 
 
 
@@ -898,7 +898,7 @@ GCViewer、GCEasy、GCHisto、GCLogViewer、Hpjmeter、garbagecat等
 1. 停顿时间比其他几款收集器确实有了质的飞跃，但也未实现最大停顿时间控制在十毫秒以内的目标。
 2. 而吞吐量方面出现了明显的下降，总运行时间是所有测试收集器里最长的。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419102423212.png" alt="image-20210419102423212" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2042%201628507082%201628507082002%20EEi4mZ%20image-20210419102423212.png" alt="image-20210419102423212" style="zoom:33%;" />
 
 **总结**
 
@@ -917,7 +917,7 @@ GCViewer、GCEasy、GCHisto、GCLogViewer、Hpjmeter、garbagecat等
 
 **吞吐量**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419102521435.png" alt="image-20210419102521435" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2044%201628507084%201628507084065%207VEEeU%20image-20210419102521435.png" alt="image-20210419102521435" style="zoom:33%;float:left" />
 
 max-JOPS：以低延迟为首要前提下的数据
 
@@ -925,7 +925,7 @@ critical-JOPS：不考虑低延迟下的数据
 
 **低延迟**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419102559849.png" alt="image-20210419102559849" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2045%201628507085%201628507085121%20otmmQn%20image-20210419102559849.png" alt="image-20210419102559849" style="zoom:33%;float:left" />
 
 在ZGC的强项停顿时间测试上，它毫不留情的将Parallel、G1拉开了两个数量级的差距。无论平均停顿、95%停顿、998停顿、99. 98停顿，还是最大停顿时间，ZGC都能毫不费劲控制在10毫秒以内。
 
@@ -945,7 +945,7 @@ critical-JOPS：不考虑低延迟下的数据
 
 `AliGC是阿里巴巴JVM团队基于G1算法，面向大堆（LargeHeap）应用场景。指定场景下的对比:`
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210419102709120.png" alt="image-20210419102709120" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-5/2021%2008%2009%2019%2004%2046%201628507086%201628507086052%20HgTn8Q%20image-20210419102709120.png" alt="image-20210419102709120" style="zoom:33%;float:left" />
 
 
 

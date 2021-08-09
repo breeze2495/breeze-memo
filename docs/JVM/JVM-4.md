@@ -4,7 +4,7 @@
 
 ### P1: 垃圾回收概述
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413211224577.png" alt="image-20210413211224577" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2034%201628506954%201628506954068%20CGPvwc%20image-20210413211224577.png" alt="image-20210413211224577" style="zoom:33%;float:left" />
 
 1. Java 和 C++语言的区别，就在于垃圾收集技术和内存动态分配上，C++语言没有垃圾收集技术，需要程序员手动的收集。
 2. 垃圾收集，不是Java语言的伴生产物。早在1960年，第一门开始使用内存动态分配和垃圾收集技术的Lisp语言诞生。
@@ -66,7 +66,7 @@
 
 ##### D2: 应该关心哪些区域的回收?
 
-​	<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413212043870.png" alt="image-20210413212043870" style="zoom:33%;float:left" />	
+​	<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2035%201628506955%201628506955016%20UCB5if%20image-20210413212043870.png" alt="image-20210413212043870" style="zoom:33%;float:left" />	
 
 
 
@@ -113,7 +113,7 @@
 
 - **循环引用**
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413212511907.png" alt="image-20210413212511907" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2036%201628506956%201628506956453%20OeWbIj%20image-20210413212511907.png" alt="image-20210413212511907" style="zoom:33%;float:left" />
 
   当p的指针断开的时候，内部的引用形成一个循环，计数器都还算1，无法被回收，这就是循环引用，从而造成内存泄漏
 
@@ -147,7 +147,7 @@
   }
   ```
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413212616408.png" alt="image-20210413212616408" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2038%201628506958%201628506958001%2001e5cV%20image-20210413212616408.png" alt="image-20210413212616408" style="zoom:33%;float:left" />
 
   - 如果不小心直接把`obj1.reference`和`obj2.reference`置为null。则在Java堆中的两块内存依然保持着互相引用，无法被回收
 
@@ -226,7 +226,7 @@
 3. 如果目标对象没有任何引用链相连，则是不可达的，就意味着该对象己经死亡，可以标记为垃圾对象。
 4. 在可达性分析算法中，只有能够被根对象集合直接或者间接连接的对象才是存活对象。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413215841972.png" alt="image-20210413215841972" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2039%201628506959%201628506959322%20ylX81v%20image-20210413215841972.png" alt="image-20210413215841972" style="zoom:33%;float:left" />
 
 
 
@@ -244,7 +244,7 @@
    - 基本数据类型对应的Class对象，一些常驻的异常对象（如：NullPointerException、OutofMemoryError），系统类加载器。
 7. 反映java虚拟机内部情况的JMXBean、JVMTI中注册的回调、本地代码缓存等。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413215933660.png" alt="image-20210413215933660" style="zoom:25%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2040%201628506960%201628506960193%20obW2yi%20image-20210413215933660.png" alt="image-20210413215933660" style="zoom:25%;float:left" />
 
 1. 总结一句话就是，除了堆空间的周边，比如：虚拟机栈、本地方法栈、方法区、字符串常量池等地方对堆空间进行引用的，都可以作为GC Roots进行可达性分析
 
@@ -318,7 +318,7 @@ protected void finalize() throws Throwable { }
 
 **通过 JVisual VM 查看 Finalizer 线程**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413220248214.png" alt="image-20210413220248214" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2041%201628506961%201628506961696%206W8F47%20image-20210413220248214.png" alt="image-20210413220248214" style="zoom:33%;float:left" />
 
 
 
@@ -429,7 +429,7 @@ obj is dead
 
 **方式一：命令行使用 jmap**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413220652601.png" alt="image-20210413220652601" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2043%201628506963%201628506963129%204zMYUb%20image-20210413220652601.png" alt="image-20210413220652601" style="zoom:33%;float:left" />
 
 **方式二：使用JVisualVM**
 
@@ -477,23 +477,23 @@ obj is dead
 
   1、先执行第一步，然后停下来，去生成此步骤dump文件
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413220910714.png" alt="image-20210413220910714" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2043%201628506963%201628506963986%20lfSQWX%20image-20210413220910714.png" alt="image-20210413220910714" style="zoom:33%;float:left" />
 
   2、 点击【堆 Dump】
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413220934118.png" alt="image-20210413220934118" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2044%201628506964%201628506964889%20agtaA3%20image-20210413220934118.png" alt="image-20210413220934118" style="zoom:33%;float:left" />
 
   3、右键 --> 另存为即可
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413220955735.png" alt="image-20210413220955735" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2045%201628506965%201628506965969%20NJpvEM%20image-20210413220955735.png" alt="image-20210413220955735" style="zoom:33%;float:left" />
 
   4、输入命令，继续执行程序
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221017368.png" alt="image-20210413221017368" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2047%201628506967%201628506967203%20LhJoUC%20image-20210413221017368.png" alt="image-20210413221017368" style="zoom:33%;float:left" />
 
   5、我们接着捕获第二张堆内存快照
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221038770.png" alt="image-20210413221038770" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2049%201628506969%201628506969293%20WAL2Ya%20image-20210413221038770.png" alt="image-20210413221038770" style="zoom:33%;float:left" />
 
 - **使用MAT查看堆内存快照**
 
@@ -501,19 +501,19 @@ obj is dead
 
   > 点击Open Heap Dump也行
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221307451.png" alt="image-20210413221307451" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2050%201628506970%201628506970574%202PZb2b%20image-20210413221307451.png" alt="image-20210413221307451" style="zoom:33%;float:left" />
 
   2、选择Java Basics --> GC Roots
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221334680.png" alt="image-20210413221334680" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2051%201628506971%201628506971603%202TxFdd%20image-20210413221334680.png" alt="image-20210413221334680" style="zoom:33%;float:left" />
 
   3、第一次捕捉堆内存快照时，GC Roots 中包含我们定义的两个局部变量，类型分别为 ArrayList 和 Date，Total:21
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221401729.png" alt="image-20210413221401729" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2053%201628506973%201628506973021%20KcYUB4%20image-20210413221401729.png" alt="image-20210413221401729" style="zoom:33%;float:left" />
 
   4、打开第二个dump文件，第二次捕获内存快照时，由于两个局部变量引用的对象被释放，所以这两个局部变量不再作为 GC Roots ，从 Total Entries = 19 也可以看出（少了两个 GC Roots）
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221423053.png" alt="image-20210413221423053" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2054%201628506974%201628506974653%20gQZmSv%20image-20210413221423053.png" alt="image-20210413221423053" style="zoom:33%;float:left" />
 
 ##### D4: JProfiler GC Roots溯源
 
@@ -553,31 +553,31 @@ public class GCRootsTest {
 
 1.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221617485.png" alt="image-20210413221617485" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2056%201628506976%201628506976746%206MuMGj%20image-20210413221617485.png" alt="image-20210413221617485" style="zoom:33%;" />
 
 2. 
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221640889.png" alt="image-20210413221640889" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2057%201628506977%201628506977867%2009eURx%20image-20210413221640889.png" alt="image-20210413221640889" style="zoom:33%;" />
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221652496.png" alt="image-20210413221652496" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2059%201628506979%201628506979290%20krEKIi%20image-20210413221652496.png" alt="image-20210413221652496" style="zoom:33%;" />
 
 可以发现颜色变绿了，可以动态的看变化
 
 3、右击对象，选择 Show Selection In Heap Walker，单独的查看某个对象
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221720533.png" alt="image-20210413221720533" style="zoom:33%;" />![image-20210413221733576](/Users/breeze/Library/Application Support/typora-user-images/image-20210413221733576.png)
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2000%201628506980%201628506980688%20gAqfVS%20image-20210413221720533.png" alt="image-20210413221720533" style="zoom:33%;" />![image-20210413221733576](https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2001%201628506981%201628506981873%20cFKb1n%20image-20210413221733576.png)
 
-![image-20210413221733576](/Users/breeze/Library/Application Support/typora-user-images/image-20210413221733576.png)
+![image-20210413221733576](https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2001%201628506981%201628506981873%20cFKb1n%20image-20210413221733576.png)
 
 4、选择Incoming References，表示追寻 GC Roots 的源头
 
 点击Show Paths To GC Roots，在弹出界面中选择默认设置即可
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221756234.png" alt="image-20210413221756234" style="zoom:33%;" />![image-20210413221808937](/Users/breeze/Library/Application Support/typora-user-images/image-20210413221808937.png)
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2002%201628506982%201628506982879%20MofMQ7%20image-20210413221756234.png" alt="image-20210413221756234" style="zoom:33%;" />![image-20210413221808937](https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2004%201628506984%201628506984183%20uU4Xkw%20image-20210413221808937.png)
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221756234.png" alt="image-20210413221756234" style="zoom:33%;" />![image-20210413221808937](/Users/breeze/Library/Application Support/typora-user-images/image-20210413221808937.png)![image-20210413221817933](/Users/breeze/Library/Application Support/typora-user-images/image-20210413221817933.png)
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2002%201628506982%201628506982879%20MofMQ7%20image-20210413221756234.png" alt="image-20210413221756234" style="zoom:33%;" />![image-20210413221808937](https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2004%201628506984%201628506984183%20uU4Xkw%20image-20210413221808937.png)![image-20210413221817933](https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2005%201628506985%201628506985633%206C0j63%20image-20210413221817933.png)
 
-![image-20210413221817933](/Users/breeze/Library/Application Support/typora-user-images/image-20210413221817933.png)
+![image-20210413221817933](https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2005%201628506985%201628506985633%206C0j63%20image-20210413221817933.png)
 
 
 
@@ -627,11 +627,11 @@ count = 6
 
 1、看这个超大对象
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221907312.png" alt="image-20210413221907312" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2006%201628506986%201628506986774%20L6vbm3%20image-20210413221907312.png" alt="image-20210413221907312" style="zoom:33%;" />
 
 2、揪出 main() 线程中出问题的代码
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413221927867.png" alt="image-20210413221927867" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2007%201628506987%201628506987765%203WOPvL%20image-20210413221927867.png" alt="image-20210413221927867" style="zoom:33%;" />
 
 #### p5: 清除阶段: 标记 - 算法
 
@@ -655,7 +655,7 @@ count = 6
    - 注意：标记的是被引用的对象，也就是可达对象，并非标记的是即将被清除的垃圾对象
 2. 清除：Collector对堆内存从头到尾进行线性的遍历，如果发现某个对象在其Header中没有标记为可达对象，则将其回收
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413222138145.png" alt="image-20210413222138145" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2008%201628506988%201628506988644%20RLuddR%20image-20210413222138145.png" alt="image-20210413222138145" style="zoom:33%;" />
 
 **标记-清除算法的缺点**
 
@@ -685,7 +685,7 @@ count = 6
 
 将活着的内存空间分为两块，每次只使用其中一块，在垃圾回收时将正在使用的内存中的存活对象复制到未被使用的内存块中，之后清除正在使用的内存块中的所有对象，交换两个内存的角色，最后完成垃圾回收
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413222351444.png" alt="image-20210413222351444" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2009%201628506989%201628506989722%202C0Nxn%20image-20210413222351444.png" alt="image-20210413222351444" style="zoom:33%;" />
 
 新生代里面就用到了复制算法，Eden区和S0区存活对象整体复制到S1区
 
@@ -707,7 +707,7 @@ count = 6
 2. 老年代大量的对象存活，那么复制的对象将会有很多，效率会很低
 3. 在新生代，对常规应用的垃圾回收，一次通常可以回收70% - 99% 的内存空间。回收性价比很高。所以现在的商业虚拟机都是用这种收集算法回收新生代。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413222415099.png" alt="image-20210413222415099" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2010%201628506990%201628506990779%20MYXQQm%20image-20210413222415099.png" alt="image-20210413222415099" style="zoom:33%;" />
 
 #### p7: 清除阶段: 标记压缩算法
 
@@ -724,7 +724,7 @@ count = 6
 1. 第一阶段和标记清除算法一样，从根节点开始标记所有被引用对象
 2. 第二阶段将所有的存活对象压缩到内存的一端，按顺序排放。之后，清理边界外所有的空间。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413222511347.png" alt="image-20210413222511347" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2011%201628506991%201628506991579%209vrmzC%20image-20210413222511347.png" alt="image-20210413222511347" style="zoom:33%;" />
 
 **标记-压缩算法与标记-清除算法的比较**
 
@@ -816,7 +816,7 @@ A：无，没有最好的算法，只有最合适的算法
   1. 一般来说，在相同条件下，堆空间越大，一次GC时所需要的时间就越长，有关GC产生的停顿也越长。为了更好地控制GC产生的停顿时间，将一块大的内存区域分割成多个小块，根据目标的停顿时间，每次合理地回收若干个小区间，而不是整个堆空间，从而减少一次GC所产生的停顿。
   2. 分代算法将按照对象的生命周期长短划分成两个部分，分区算法将整个堆空间划分成连续的不同小区间。每一个小区间都独立使用，独立回收。这种算法的好处是可以控制一次回收多少个小区间。
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413222930095.png" alt="image-20210413222930095" style="zoom:33%;" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2012%201628506992%201628506992474%20pU5Agp%20image-20210413222930095.png" alt="image-20210413222930095" style="zoom:33%;" />
 
 #### 写在最后
 
@@ -968,7 +968,7 @@ JVM参数：
 
 2、我也查过了大对象阈值的默认值
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414095456496.png" alt="image-20210414095456496" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2013%201628506993%201628506993847%20F3k9ij%20image-20210414095456496.png" alt="image-20210414095456496" style="zoom:33%;" />
 
 我不太懂这个默认值为啥是0，我猜测可能是代表什么比例，目前也没有搜到相关的东西。这个不太重要，暂时就没有太深究，希望读者有知道的可以告知我一声。
 
@@ -1032,11 +1032,11 @@ Heap
 
 1、来看看字节码：实例方法局部变量表第一个变量肯定是 this
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414095536048.png" alt="image-20210414095536048" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2014%201628506994%201628506994934%20g3CcHH%20image-20210414095536048.png" alt="image-20210414095536048" style="zoom:33%;" />
 
 2、你有没有看到，局部变量表的大小是 2。但是局部变量表里只有一个索引为0的啊？那索引为1的是哪个局部变量呢？实际上索引为1的位置是buffer在占用着，执行 System.gc() 时，栈中还有 buffer 变量指向堆中的字节数组，所以没有进行GC
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414095555754.png" alt="image-20210414095555754" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2017%201628506997%201628506997168%20vKWRaQ%20image-20210414095555754.png" alt="image-20210414095555754" style="zoom:33%;" />
 
 3、那么这种代码块的情况，什么时候会被GC呢？我们来看第四个方法
 
@@ -1062,9 +1062,9 @@ A：局部变量表长度为 2 ，这说明了出了代码块时，buffer 就出
 
 > 这点看不懂的可以看我前面的文章：虚拟机栈 --> Slot的重复利用
 
- <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414095638532.png" alt="image-20210414095638532" style="zoom:33%;" />![image-20210414095650579](/Users/breeze/Library/Application Support/typora-user-images/image-20210414095650579.png)
+ <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2018%201628506998%201628506998205%20lnusqh%20image-20210414095638532.png" alt="image-20210414095638532" style="zoom:33%;" />![image-20210414095650579](https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2019%201628506999%201628506999320%204a74kg%20image-20210414095650579.png)
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414095638532.png" alt="image-20210414095638532" style="zoom:33%;" />!
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2018%201628506998%201628506998205%20lnusqh%20image-20210414095638532.png" alt="image-20210414095638532" style="zoom:33%;" />!
 
 **调用 localvarGC5() 方法**
 
@@ -1124,7 +1124,7 @@ Heap
 
 右边的图：后期有一些对象不用了，按道理应该断开引用，但是存在一些链没有断开（图示中的Forgotten Reference Memory Leak），从而导致没有办法被回收。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414095834382.png" alt="image-20210414095834382" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2020%201628507000%201628507000293%20lwnuxY%20image-20210414095834382.png" alt="image-20210414095834382" style="zoom:33%;" />
 
 **常见例子**
 
@@ -1235,7 +1235,7 @@ Process finished with exit code -1
 1. 在操作系统中，是指**一个时间段**中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理器上运行
 2. 并发不是真正意义上的“同时进行”，只是CPU把一个时间段划分成几个时间片段（时间区间），然后在这几个时间区间之间来回切换。由于CPU处理的速度非常快，只要时间间隔处理得当，即可让用户感觉是多个应用程序同时在进行
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414100020287.png" alt="image-20210414100020287" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2021%201628507001%201628507001646%20d0eot9%20image-20210414100020287.png" alt="image-20210414100020287" style="zoom:33%;" />
 
 #### p2: 并行的概念
 
@@ -1243,7 +1243,7 @@ Process finished with exit code -1
 2. 其实决定并行的因素不是CPU的数量，而是CPU的核心数量，比如一个CPU多个核也可以并行
 3. 适合科学计算，后台处理等弱交互场景
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414100058304.png" alt="image-20210414100058304" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2022%201628507002%201628507002536%20jSqLQ2%20image-20210414100058304.png" alt="image-20210414100058304" style="zoom:33%;" />
 
 > **并发与并行的对比**
 
@@ -1260,7 +1260,7 @@ Process finished with exit code -1
    - 相较于并行的概念，单线程执行。
    - 如果内存不够，则程序暂停，启动JVM垃圾回收器进行垃圾回收（单线程）
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414100132093.png" alt="image-20210414100132093" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2023%201628507003%201628507003333%20G71fjE%20image-20210414100132093.png" alt="image-20210414100132093" style="zoom:33%;" />
 
 并发和并行，在谈论垃圾收集器的上下文语境中，它们可以解释如下：
 
@@ -1274,7 +1274,7 @@ Process finished with exit code -1
 
 2. 典型垃圾回收器：CMS、G1
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414100149258.png" alt="image-20210414100149258" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2024%201628507004%201628507004121%20fM5CAP%20image-20210414100149258.png" alt="image-20210414100149258" style="zoom:33%;" />
 
 ### P5: HotSpot的算法实现细节
 
@@ -1319,7 +1319,7 @@ Process finished with exit code -1
 
 1、一般的垃圾回收算法至少会划分出两个年代，年轻代和老年代。但是单纯的分代理论在垃圾回收的时候存在一个巨大的缺陷：为了找到年轻代中的存活对象，却不得不遍历整个老年代，反过来也是一样的。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414100314386.png" alt="image-20210414100314386" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2024%201628507004%201628507004887%20e1o0e4%20image-20210414100314386.png" alt="image-20210414100314386" style="zoom:33%;" />
 
 2、如果我们从年轻代开始遍历，那么可以断定N, S, P, Q都是存活对象。但是，V却不会被认为是存活对象，其占据的内存会被回收了。这就是一个惊天的大漏洞！因为U本身是老年代对象，而且有外部引用指向它，也就是说U是存活对象，而U指向了V，也就是说V也应该是存活对象才是！而这都是因为我们只遍历年轻代对象！
 
@@ -1356,7 +1356,7 @@ Process finished with exit code -1
    - 虚引用（Phantom Reference）
 4. 这4种引用强度依次逐渐减弱。除强引用外，其他3种引用均可以在java.lang.ref包中找到它们的身影。如下图，显示了这3种引用类型对应的类，开发人员可以在应用程序中直接使用它们。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414100441940.png" alt="image-20210414100441940" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2025%201628507005%201628507005652%20LKtpfB%20image-20210414100441940.png" alt="image-20210414100441940" style="zoom:33%;" />
 
 Reference子类中只有终结器引用是包内可见的，其他3种引用类型均为public，可以在应用程序中直接使用
 
@@ -1407,7 +1407,7 @@ Hello,尚硅谷
 StringBuffer str = new StringBuffer("hello,尚硅谷");
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210414100527620.png" alt="image-20210414100527620" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2003%2026%201628507006%201628507006650%20dG5OSA%20image-20210414100527620.png" alt="image-20210414100527620" style="zoom:33%;" />
 
 **总结**
 

@@ -9,7 +9,7 @@
   - 堆针对一个JVM进程来说是唯一的。也就是**一个进程只有一个JVM实例**，一个JVM实例中就有一个运行时数据区，一个运行时数据区只有一个堆和一个方法区。	
   - 但是**进程包含多个线程，他们是共享同一堆空间的**。
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210329114244343.png" alt="image-20210329114244343" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2035%201628506775%201628506775656%20NB9180%20image-20210329114244343.png" alt="image-20210329114244343" style="zoom:33%;float:left" />
 
   - 一个JVM实例只存在一个堆内存，堆也是Java内存管理的核心区域。
   - Java堆区在JVM启动的时候即被创建，其空间大小也就确定了，堆是JVM管理的最大一块内存空间，并且堆内存的大小是可以调节的。
@@ -29,7 +29,7 @@
 
   - Java7 及之前堆内存逻辑上分为三部分：新生区+养老区+永久区
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210329114811713.png" alt="image-20210329114811713" style="zoom:25%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2036%201628506776%201628506776638%20CSDW7z%20image-20210329114811713.png" alt="image-20210329114811713" style="zoom:25%;float:left" />
 
   - Java 8及之后堆内存逻辑上分为三部分：新生区+养老区+元空间	
 
@@ -59,13 +59,13 @@
     - Eden空间
     - Survivor0 和 Suvivor1 空间 (也称from,to区)
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210329120313545.png" alt="image-20210329120313545" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2037%201628506777%201628506777542%20hYKEst%20image-20210329120313545.png" alt="image-20210329120313545" style="zoom:33%;float:left" />
 
   
 
   - **参数设置**
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210329144425626.png" alt="image-20210329144425626" style="zoom:30%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2038%201628506778%201628506778327%20GXTwXQ%20image-20210329144425626.png" alt="image-20210329144425626" style="zoom:30%;float:left" />
 
   - 配置新生代与老年代在堆结构的占比
     - 默认**-XX:NewRatio**=2，表示新生代占1，老年代占2，新生代占整个堆的1/3
@@ -85,7 +85,7 @@
 
   1.我们创建的对象,一般是放在Eden区.当Eden区满了之后,就会触发GC操作,一般为YGC/minor GC操作
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210329145506412.png" alt="image-20210329145506412" style="zoom:30%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2039%201628506779%201628506779136%20Hs8ooT%20image-20210329145506412.png" alt="image-20210329145506412" style="zoom:30%;float:left" />
 
   
 
@@ -97,13 +97,13 @@
 
   [注]:	再次进行GC时,会将某一个存在对象的Survivor from区中的对象移到另一个Survivor To区,因此From To不固定指定
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210329150516986.png" alt="image-20210329150516986" style="zoom:30%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2039%201628506779%201628506779782%20W0N4aH%20image-20210329150516986.png" alt="image-20210329150516986" style="zoom:30%;float:left" />
 
   
 
   4.我们继续不断的进行对象生成和垃圾回收,当Survivor中的对象年龄达到阈值15时,将会触发一次Promotion(晋升)操作,将该对象晋升至老年代当中
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210329150754205.png" alt="image-20210329150754205" style="zoom:30%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2040%201628506780%201628506780494%20DbiEXT%20image-20210329150754205.png" alt="image-20210329150754205" style="zoom:30%;float:left" />
 
 
 
@@ -121,7 +121,7 @@
      - 那万一老年代都放不下，则先触发FullGC ，再看看能不能放下，放得下最好，但如果还是放不下，那只能报 OOM
   3. 如果 Eden 区满了，将对象往幸存区拷贝时，发现幸存区放不下啦，那只能便宜了某些新对象，让他们直接晋升至老年区
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210329151029749.png" alt="image-20210329151029749" style="zoom:30%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2042%201628506782%201628506782218%20kIhZIR%20image-20210329151029749.png" alt="image-20210329151029749" style="zoom:30%;float:left" />
 
 
 
@@ -161,7 +161,7 @@
 2. 因为Java对象大多都具备朝生夕灭的特性，所以Minor GC非常频繁，一般回收速度也比较快。这一定义既清晰又易于理解。
 3. Minor GC会引发STW（Stop The World），暂停其它用户的线程，等垃圾回收结束，用户线程才恢复运行
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210330103613539.png" alt="image-20210330103613539" style="zoom:28%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2043%201628506783%201628506783524%20k6bUMV%20image-20210330103613539.png" alt="image-20210330103613539" style="zoom:28%;float:left" />
 
 
 
@@ -238,7 +238,7 @@
 
 3. 据我所知所有OpenJDK衍生出来的JVM都提供了TLAB的设计。
 
-   <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210330104846839.png" alt="image-20210330104846839" style="zoom:20%;float:left" />
+   <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2044%201628506784%201628506784510%20yX78yL%20image-20210330104846839.png" alt="image-20210330104846839" style="zoom:20%;float:left" />
 
 - 每一个线程都有一个 TLAB空间
 - 当一个线程的TLAB存满时,可以使用公共区域(蓝色)
@@ -254,7 +254,7 @@
 >
 > 2、和这里讲的有点不同。我猜测说的意思是某一次分配，如果TLAB用完了，那么**这一次**先在Eden区直接分配。空闲下来后再加锁分配新的TLAB（TLAB内存较大，分配时间应该较长）
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210330105333272.png" alt="image-20210330105333272" style="zoom:33%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2045%201628506785%201628506785336%2000W26j%20image-20210330105333272.png" alt="image-20210330105333272" style="zoom:33%;" />
 
 
 
@@ -648,7 +648,7 @@ public class ScalarReplace {
 
 ThreadLocal：如何保证多个线程在并发环境下的安全性？典型场景就是数据库连接管理，以及会话管理。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210401154330032.png" alt="image-20210401154330032" style="zoom:36%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2046%201628506786%201628506786201%20QiJBFU%20image-20210401154330032.png" alt="image-20210401154330032" style="zoom:36%;float:left" />
 
 **举例:**
 
@@ -659,7 +659,7 @@ ThreadLocal：如何保证多个线程在并发环境下的安全性？典型场
 3. 真正的 person 对象存放在 Java 堆中
 4. 在 person 对象中，有个指针指向方法区中的 person 类型数据，表明这个 person 对象是用方法区中的 Person 类 new 出来的
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210401154532358.png" alt="image-20210401154532358" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2047%201628506787%201628506787429%20oIUF8q%20image-20210401154532358.png" alt="image-20210401154532358" style="zoom:33%;float:left" />
 
 
 
@@ -670,7 +670,7 @@ ThreadLocal：如何保证多个线程在并发环境下的安全性？典型场
 1. 《Java虚拟机规范》中明确说明：尽管所有的方法区在逻辑上是属于堆的一部分，但一些简单的实现可能不会选择去进行垃圾收集或者进行压缩。但对于HotSpotJVM而言，方法区还有一个别名叫做Non-Heap（非堆），目的就是要和堆分开。
 2. 所以，**方法区可以看作是一块独立于Java堆的内存空间**。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210401154900412.png" alt="image-20210401154900412" style="zoom:25%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2048%201628506788%201628506788334%20O2VDcW%20image-20210401154900412.png" alt="image-20210401154900412" style="zoom:25%;float:left" />
 
 
 
@@ -721,7 +721,7 @@ public class MethodAreaDemo {
 
 很简单的一段代码,却加载了1600多个类
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210401155458705.png" alt="image-20210401155458705" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2049%201628506789%201628506789148%20ZvolQx%20image-20210401155458705.png" alt="image-20210401155458705" style="zoom:33%;float:left" />
 
 
 
@@ -735,7 +735,7 @@ public class MethodAreaDemo {
 5. 永久代、元空间二者并不只是名字变了，内部结构也调整了
 6. 根据《Java虚拟机规范》的规定，如果方法区无法满足新的内存分配需求时，将抛出OOM异常
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210401155751108.png" alt="image-20210401155751108" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2050%201628506790%201628506790273%20UJc5pM%20image-20210401155751108.png" alt="image-20210401155751108" style="zoom:33%;float:left" />
 
 
 
@@ -749,7 +749,7 @@ public class MethodAreaDemo {
 2. -XX:MaxPermsize来设定永久代最大可分配空间。32位机器默认是64M，64位机器模式是82M
 3. 当JVM加载的类信息容量超过了这个值，会报异常OutofMemoryError:PermGen space。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210401155945982.png" alt="image-20210401155945982" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2051%201628506791%201628506791281%20bFW1Mk%20image-20210401155945982.png" alt="image-20210401155945982" style="zoom:33%;float:left" />
 
 
 
@@ -830,7 +830,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: Metaspace
 
 - **概念**
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210401221106362.png" alt="image-20210401221106362" style="zoom:30%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2052%201628506792%201628506792268%20ut2i54%20image-20210401221106362.png" alt="image-20210401221106362" style="zoom:30%;float:left" />
 
   
 
@@ -838,7 +838,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: Metaspace
 
   
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210401222000718.png" alt="image-20210401222000718" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2053%201628506793%201628506793282%20xMQbY5%20image-20210401222000718.png" alt="image-20210401222000718" style="zoom:33%;float:left" />
 
   - **类型信息**
 
@@ -1273,7 +1273,7 @@ public static int count;
 
 **常量池与运行时常量池**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407120943139.png" alt="image-20210407120943139" style="zoom:30%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2054%201628506794%201628506794172%20to00Ta%20image-20210407120943139.png" alt="image-20210407120943139" style="zoom:30%;float:left" />
 
 1. 方法区，内部包含了运行时常量池
 2. 字节码文件，内部包含了常量池。（之前的字节码文件中已经看到了很多Constant pool的东西，这个就是常量池）
@@ -1287,7 +1287,7 @@ public static int count;
 1. 一个有效的字节码文件中除了包含类的版本信息、字段、方法以及接口等描述符信息外。还包含一项信息就是**常量池表**（**Constant Pool Table**），包括各种字面量和对类型、域和方法的符号引用。
 2. 字面量： 10 ， “我是某某”这种数字和字符串都是字面量
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407121144825.png" alt="image-20210407121144825" style="zoom:30%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2055%201628506795%201628506795329%20i8V8I3%20image-20210407121144825.png" alt="image-20210407121144825" style="zoom:30%;float:left" />
 
 - **为什么需要常量池？**
 
@@ -1474,67 +1474,67 @@ SourceFile: "MethodAreaDemo.java"
 
 1.初始状态
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407122150970.png" alt="image-20210407122150970" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2056%201628506796%201628506796330%208gwpLF%20image-20210407122150970.png" alt="image-20210407122150970" style="zoom:30%;" />
 
 2.首先将操作数500压入操作数栈中
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407122233831.png" alt="image-20210407122233831" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2057%201628506797%201628506797217%20jLdfQq%20image-20210407122233831.png" alt="image-20210407122233831" style="zoom:30%;" />
 
 3.然后操作数500从操作数栈中取出,存储到局部变量表中索引为1的位置
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407135920599.png" alt="image-20210407135920599" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2018%2059%2059%201628506799%201628506799016%20w3oSk9%20image-20210407135920599.png" alt="image-20210407135920599" style="zoom:30%;" />
 
 4.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407135950264.png" alt="image-20210407135950264" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2000%201628506800%201628506800175%20XrxoXv%20image-20210407135950264.png" alt="image-20210407135950264" style="zoom:30%;" />
 
 5.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140012099.png" alt="image-20210407140012099" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2001%201628506801%201628506801017%2048lrXV%20image-20210407140012099.png" alt="image-20210407140012099" style="zoom:30%;" />
 
 6.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140040509.png" alt="image-20210407140040509" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2001%201628506801%201628506801960%20OqoNmn%20image-20210407140040509.png" alt="image-20210407140040509" style="zoom:30%;" />
 
 7.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140105963.png" alt="image-20210407140105963" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2002%201628506802%201628506802884%20qeWU5s%20image-20210407140105963.png" alt="image-20210407140105963" style="zoom:30%;" />
 
 8.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140127869.png" alt="image-20210407140127869" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2003%201628506803%201628506803813%20DrthGr%20image-20210407140127869.png" alt="image-20210407140127869" style="zoom:30%;" />
 
 9.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140149264.png" alt="image-20210407140149264" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2005%201628506805%201628506805051%20Pxz9E9%20image-20210407140149264.png" alt="image-20210407140149264" style="zoom:30%;" />
 
 10.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140215365.png" alt="image-20210407140215365" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2005%201628506805%201628506805904%207AzYn0%20image-20210407140215365.png" alt="image-20210407140215365" style="zoom:30%;" />
 
 11.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140256632.png" alt="image-20210407140256632" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2006%201628506806%201628506806991%20t0vWEr%20image-20210407140256632.png" alt="image-20210407140256632" style="zoom:30%;" />
 
 12.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140314569.png" alt="image-20210407140314569" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2007%201628506807%201628506807825%20upVYeY%20image-20210407140314569.png" alt="image-20210407140314569" style="zoom:30%;" />
 
 13.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140354063.png" alt="image-20210407140354063" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2008%201628506808%201628506808637%20RKXTgX%20image-20210407140354063.png" alt="image-20210407140354063" style="zoom:30%;" />
 
 14.执行加法运算后，将计算结果放在操作数栈顶
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140445783.png" alt="image-20210407140445783" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2009%201628506809%201628506809979%200jSsv6%20image-20210407140445783.png" alt="image-20210407140445783" style="zoom:30%;" />
 
 15.打印
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140519139.png" alt="image-20210407140519139" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2010%201628506810%201628506810862%20YAfy4W%20image-20210407140519139.png" alt="image-20210407140519139" style="zoom:30%;" />
 
 16.
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407140540271.png" alt="image-20210407140540271" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2011%201628506811%201628506811767%20NhKh09%20image-20210407140540271.png" alt="image-20210407140540271" style="zoom:30%;" />
 
 **符号引用 --> 直接引用**
 
@@ -1560,19 +1560,19 @@ SourceFile: "MethodAreaDemo.java"
 
 `方法区有永久代实现,使用JVM虚拟机内存`
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407155159519.png" alt="image-20210407155159519" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2012%201628506812%201628506812668%20XIU1Qm%20image-20210407155159519.png" alt="image-20210407155159519" style="zoom:33%;float:left" />
 
 **JDK7**
 
 `方法区有永久代实现,使用JVM虚拟机内存`
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407155344436.png" alt="image-20210407155344436" style="zoom:30%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2013%201628506813%201628506813626%20Sr9I86%20image-20210407155344436.png" alt="image-20210407155344436" style="zoom:30%;float:left" />
 
 **JDK8**
 
 `方法区由元空间实现,使用物理机本地内存`
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407155551508.png" alt="image-20210407155551508" style="zoom:30%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2014%201628506814%201628506814432%209UcmfT%20image-20210407155551508.png" alt="image-20210407155551508" style="zoom:30%;float:left" />
 
 
 
@@ -1621,15 +1621,15 @@ public class StaticFieldTest {
 
 jdk6环境下
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407160907622.png" alt="image-20210407160907622" style="zoom:30%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2015%201628506815%201628506815193%20bUrA8s%20image-20210407160907622.png" alt="image-20210407160907622" style="zoom:30%;float:left" />
 
 jdk7环境下
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407160941607.png" alt="image-20210407160941607" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2016%201628506816%201628506816246%20CKace4%20image-20210407160941607.png" alt="image-20210407160941607" style="zoom:33%;float:left" />
 
 jdk8环境下
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407161021949.png" alt="image-20210407161021949" style="zoom:30%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2017%201628506817%201628506817331%20q9cSLw%20image-20210407161021949.png" alt="image-20210407161021949" style="zoom:30%;float:left" />
 
 
 
@@ -1675,7 +1675,7 @@ public class StaticObjTest {
 
 4、测试发现：三个对象的数据在内存中的地址都落在Eden区范围内，所以结论：**只要是对象实例必然会在Java堆中分配**。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407161546883.png" alt="image-20210407161546883" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2018%201628506818%201628506818550%20mdMbDM%20image-20210407161546883.png" alt="image-20210407161546883" style="zoom:33%;float:left" />
 
 > 1、0x00007f32c7800000(Eden区的起始地址) ---- 0x00007f32c7b50000(Eden区的终止地址)
 >
@@ -1685,7 +1685,7 @@ public class StaticObjTest {
 
 5、接着，找到了一个引用该staticObj对象的地方，是在一个java.lang.Class的实例里，并且给出了这个实例的地址，通过Inspector查看该对象实例，可以清楚看到这确实是一个java.lang.Class类型的对象实例，里面有一个名为staticobj的实例字段：
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210407162013900.png" alt="image-20210407162013900" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2019%201628506819%201628506819140%20D9XNjD%20image-20210407162013900.png" alt="image-20210407162013900" style="zoom:33%;float:left" />
 
 从《Java虚拟机规范》所定义的概念模型来看，所有Class相关的信息都应该存放在方法区之中，但方法区该如何实现，《Java虚拟机规范》并未做出规定，这就成了一件允许不同虚拟机自己灵活把握的事情。JDK7及其以后版本的HotSpot虚拟机选择把静态变量与类型在Java语言一端的映射Class对象存放在一起，**存储于Java堆之中**，从我们的实验中也明确验证了这一点
 
@@ -1747,7 +1747,7 @@ public class StaticObjTest {
 
 二面：`java`对象头里有什么
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210408201400803.png" alt="image-20210408201400803" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2020%201628506820%201628506820662%20bs3dgd%20image-20210408201400803.png" alt="image-20210408201400803" style="zoom:33%;float:left" />
 
 
 
@@ -1885,7 +1885,7 @@ class Account{
 
 ### P2: 对象的内存布局
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210409095334955.png" alt="image-20210409095334955" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2021%201628506821%201628506821730%203qpmeR%20image-20210409095334955.png" alt="image-20210409095334955" style="zoom:50%;float:left" />
 
 > 内存布局总结
 
@@ -1912,7 +1912,7 @@ class Account{
 
 **图解内存布局**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210409134508710.png" alt="image-20210409134508710" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2022%201628506822%201628506822733%20Iat6GK%20image-20210409134508710.png" alt="image-20210409134508710" style="zoom:50%;" />
 
 
 
@@ -1920,7 +1920,7 @@ class Account{
 
 `JVM是如何通过栈帧中的对象引用访问到其内部的对象实例呢？`
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210409135008303.png" alt="image-20210409135008303" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2023%201628506823%201628506823746%20u85ImD%20image-20210409135008303.png" alt="image-20210409135008303" style="zoom:33%;float:left" />
 
 定位，通过栈上reference访问
 
@@ -1931,14 +1931,14 @@ class Account{
 1. 缺点：在堆空间中开辟了一块空间作为句柄池，句柄池本身也会占用空间；通过两次指针访问才能访问到堆中的对象，效率低
 2. 优点：reference中存储稳定句柄地址，对象被移动（垃圾收集时移动对象很普遍）时只会改变句柄中实例数据指针即可，reference本身不需要被修改
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210409135059087.png" alt="image-20210409135059087" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2024%201628506824%201628506824907%20vjocFF%20image-20210409135059087.png" alt="image-20210409135059087" style="zoom:33%;float:left" />
 
 **2、直接指针（HotSpot采用）**
 
 1. 优点：直接指针是局部变量表中的引用，直接指向堆中的实例，在对象实例中有类型指针，指向的是方法区中的对象类型数据
 2. 缺点：对象被移动（垃圾收集时移动对象很普遍）时需要修改 reference 的值
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210409135127247.png" alt="image-20210409135127247" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2025%201628506825%201628506825850%20IXXpmA%20image-20210409135127247.png" alt="image-20210409135127247" style="zoom:33%;float:left" />
 
 
 
@@ -1982,7 +1982,7 @@ public class BufferTest {
 
 直接占用了 1G 的本地内存
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413104417822.png" alt="image-20210413104417822" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2026%201628506826%201628506826808%20vB0kTF%20image-20210413104417822.png" alt="image-20210413104417822" style="zoom:33%;float:left" />
 
 ### P2: BIO 和 NIO
 
@@ -1990,7 +1990,7 @@ public class BufferTest {
 
 原来采用BIO的架构，在读写本地文件时，我们需要从用户态切换成内核态
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413104606263.png" alt="image-20210413104606263" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2028%201628506828%201628506828009%205qMb8L%20image-20210413104606263.png" alt="image-20210413104606263" style="zoom:33%;float:left" />
 
 
 
@@ -1998,7 +1998,7 @@ public class BufferTest {
 
 NIO直接操作物理磁盘,省去了中间过程
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413104925285.png" alt="image-20210413104925285" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2029%201628506829%201628506829072%20v7s7TD%20image-20210413104925285.png" alt="image-20210413104925285" style="zoom:33%;float:left" />
 
 
 
@@ -2052,7 +2052,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: Direct buffer memory
 
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210413105321032.png" alt="image-20210413105321032" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-2/2021%2008%2009%2019%2000%2030%201628506830%201628506830011%20aUE681%20image-20210413105321032.png" alt="image-20210413105321032" style="zoom:33%;float:left" />
 
 
 

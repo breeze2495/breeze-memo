@@ -96,12 +96,12 @@
 
 - **简图:**
 
-  - <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319110141953.png" alt="image-20210319110141953" style="zoom: 25%;float:left" />
+  - <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2031%201628506651%201628506651221%20yMHBwk%20image-20210319110141953.png" alt="image-20210319110141953" style="zoom: 25%;float:left" />
 
 - **详细图:**
 
   - **英文版:**
-    - <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319110300934.png" alt="image-20210319110300934" style="zoom:25%;float:left" />	
+    - <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2033%201628506653%201628506653499%20l8LbrT%20image-20210319110300934.png" alt="image-20210319110300934" style="zoom:25%;float:left" />	
 
   
   - 
@@ -129,7 +129,7 @@
 
   - **中文版:**
 
-    - ### <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319110610736.png" alt="image-20210319110610736" style="zoom:25%;float:left" />
+    - ### <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2034%201628506654%201628506654795%20pp4xHz%20image-20210319110610736.png" alt="image-20210319110610736" style="zoom:25%;float:left" />
 
   
 
@@ -172,7 +172,7 @@
   - Classloader**只负责**class文件的加载,至于它是否可以运行,则有Execution Engine决定
   - **加载的类信息存放于一块被称为方法区的内存空间**,除了类的信息外,方法区中还会存放运行时常量池信息,可能还包括字符串字面量和数字常量(这部分常量信息是class文件中常量池部分的内存映射
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319114158023.png" alt="image-20210319114158023" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2036%201628506656%201628506656272%20R3fbys%20image-20210319114158023.png" alt="image-20210319114158023" style="zoom:33%;float:left" />
 
 
 
@@ -182,7 +182,7 @@
 - class file加载到JVM中,被称为DNA元数据模板(下图内存中的Car Class),放在方法区
 - .class文件 -> JVM ->元数据模板,此过程就需要一个运输工具(类装载器ClassLoader)
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319114853215.png" alt="image-20210319114853215" style="zoom:30%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2036%201628506656%201628506656948%20hAJGU4%20image-20210319114853215.png" alt="image-20210319114853215" style="zoom:30%;float:left" />
 
 
 
@@ -206,10 +206,10 @@
   - 执行 main() 方法（静态方法）就需要先加载main方法所在类 HelloLoader
   - 加载成功，则进行链接、初始化等操作。完成后调用 HelloLoader 类中的静态方法 main
   - 加载失败则抛出异常
-  - <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319135057487.png" alt="image-20210319135057487" style="zoom: 25%;float:left" />
+  - <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2037%201628506657%201628506657711%20XEJfie%20image-20210319135057487.png" alt="image-20210319135057487" style="zoom: 25%;float:left" />
   - **完整流程图:** 
     - **加载 -> 链接 -> 初始化**
-    - <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319135233311.png" alt="image-20210319135233311" style="zoom:33%;float:left" />
+    - <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2038%201628506658%201628506658553%203E8bdW%20image-20210319135233311.png" alt="image-20210319135233311" style="zoom:33%;float:left" />
 
   
 
@@ -244,7 +244,7 @@
     - **元数据**（**Metadata**），又称**中介数据**、**中继数据**，为描述数据的数据（data about data），主要是描述数据[属性](https://baike.baidu.com/item/属性/1405051)（property）的信息，用来支持如指示存储位置、历史数据、资源查找、文件记录等功能。
 - **例如:**
   - 使用 BinaryViewer软件查看字节码文件，其开头均为 CAFE BABE ，如果出现不合法的字节码文件，那么将会验证不通过。
-  - <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319140134701.png" alt="image-20210319140134701" style="zoom:26%;float:left" />
+  - <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2039%201628506659%201628506659616%20ZD4zro%20image-20210319140134701.png" alt="image-20210319140134701" style="zoom:26%;float:left" />
 
 
 
@@ -276,7 +276,7 @@
 - 事实上，解析操作往往会伴随着JVM在执行完初始化之后再执行
 - **符号引用**就是一组符号来描述所引用的目标。符号引用的字面量形式明确定义在《java虚拟机规范》的class文件格式中。**直接引用**就是直接指向目标的指针、相对偏移量或一个间接定位到目标的句柄
   - 反编译 class 文件后可以查看符号引用，下面带# 的就是符号引用
-  - <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319141622067.png" alt="image-20210319141622067" style="zoom:25%;float:left" />
+  - <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2040%201628506660%201628506660702%208iCXCx%20image-20210319141622067.png" alt="image-20210319141622067" style="zoom:25%;float:left" />
 - 解析动作主要针对类或接口、字段、类方法、接口方法、方法类型等。对应常量池中的CONSTANT Class info、CONSTANT Fieldref info、CONSTANT Methodref info等
 
 
@@ -426,15 +426,15 @@
 - JVM严格来讲支持两种类型的类加载器 。分别为引导类加载器（Bootstrap ClassLoader）和自定义类加载器（User-Defined ClassLoader）
 - 从概念上来讲，自定义类加载器一般指的是程序中由开发人员自定义的一类类加载器，但是Java虚拟机规范却没有这么定义，而是**将所有派生于抽象类ClassLoader的类加载器都划分为自定义类加载器**
 - 无论类加载器的类型如何划分，在程序中我们最常见的类加载器始终只有3个，如下所示:
-- <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319154349966.png" alt="image-20210319154349966" style="zoom: 25%;float:left" />
+- <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2041%201628506661%201628506661809%20UozYUy%20image-20210319154349966.png" alt="image-20210319154349966" style="zoom: 25%;float:left" />
 
 - **ExtClassLoader:**
   
-- <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319154509739.png" alt="image-20210319154509739" style="zoom:25%;float:left" />
+- <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2042%201628506662%201628506662703%20INwhvh%20image-20210319154509739.png" alt="image-20210319154509739" style="zoom:25%;float:left" />
   
 - **AppClassLoader:**
   
-- <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319154603631.png" alt="image-20210319154603631" style="zoom:25%;float:left" />
+- <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2043%201628506663%201628506663612%20i4nnQI%20image-20210319154603631.png" alt="image-20210319154603631" style="zoom:25%;float:left" />
   
 - **获取实例代码:**
 
@@ -574,16 +574,16 @@
 
 - ClassLoader类，它是一个抽象类，其后所有的类加载器都继承自ClassLoader（不包括启动类加载器）
 
-- <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319210317727.png" alt="image-20210319210317727" style="zoom: 43%;" />
+- <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2044%201628506664%201628506664607%20KiWFeC%20image-20210319210317727.png" alt="image-20210319210317727" style="zoom: 43%;" />
 
 - sun.misc.Launcher 它是一个java虚拟机的入口应用
-- <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319210735848.png" alt="image-20210319210735848" style="zoom:30%;float:left" />
+- <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2045%201628506665%201628506665608%20Ower8F%20image-20210319210735848.png" alt="image-20210319210735848" style="zoom:30%;float:left" />
 
 
 
 - **获取classLoader的方式:**
 
-  - <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210319210858075.png" alt="image-20210319210858075" style="zoom:30%;float:left" />
+  - <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2047%201628506667%201628506667890%20XneYjq%20image-20210319210858075.png" alt="image-20210319210858075" style="zoom:30%;float:left" />
 
   - ```java
     public class ClassLoaderTest2 {
@@ -628,7 +628,7 @@
   - 如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是双亲委派模式。
   - 父类加载器一层一层往下分配任务，如果子类加载器能加载，则加载此类，如果将加载任务分配至系统类加载器也无法加载此类，则抛出异常
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210320101049236.png" alt="image-20210320101049236" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2048%201628506668%201628506668823%20DRVKMS%20image-20210320101049236.png" alt="image-20210320101049236" style="zoom:33%;float:left" />
 
 - **示例:**
 
@@ -686,7 +686,7 @@
 
     - 输出结果:
 
-      <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210320101526365.png" alt="image-20210320101526365" style="zoom:33%;float:left" />
+      <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2050%201628506670%201628506670095%20qDAZQq%20image-20210320101526365.png" alt="image-20210320101526365" style="zoom:33%;float:left" />
       
       - 由于双亲委派机制一直找父类,所以最后找到了BootStrap ClassLoader,而BootStrap找到的是JDK自带的String类,在那个String类中并没有main()方法,所以就报错了
 
@@ -736,7 +736,7 @@
     - 第三方的jar包中的类属于系统类加载器来加载
     - 从这里面就可以看到SPI核心接口由引导类加载器来加载，SPI具体实现类由系统类加载器来加载
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210320102440331.png" alt="image-20210320102440331" style="zoom:28%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2050%201628506670%201628506670833%208Jvnrp%20image-20210320102440331.png" alt="image-20210320102440331" style="zoom:28%;float:left" />
 
      
 
@@ -782,7 +782,7 @@
 
 - 本节主要讲运行时数据区,它是类加载完成后的阶段
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210320142136498.png" alt="image-20210320142136498" style="zoom:30%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2052%201628506672%201628506672567%20bozSvE%20image-20210320142136498.png" alt="image-20210320142136498" style="zoom:30%;float:left" />
 
   - 当我们通过前面的：类的加载 --> 验证 --> 准备 --> 解析 --> 初始化，这几个阶段完成后，就会用到执行引擎对我们的类进行使用，同时执行引擎将会使用到我们运行时数据区
 
@@ -795,7 +795,7 @@
 
 - 下图来自阿里巴巴手册JDK8
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210320142457463.png" alt="image-20210320142457463" style="zoom:30%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2053%201628506673%201628506673376%201jv6Uf%20image-20210320142457463.png" alt="image-20210320142457463" style="zoom:30%;float:left" />
 
 - **线程的内存空间:**
 
@@ -807,13 +807,13 @@
 
     - 线程间共享：堆、堆外内存（永久代或元空间、代码缓存）
 
-      <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210320142702865.png" alt="image-20210320142702865" style="zoom:33%;float:left" />
+      <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2056%201628506676%201628506676323%207HOTHY%20image-20210320142702865.png" alt="image-20210320142702865" style="zoom:33%;float:left" />
 
 - **Runtime类:**
 
   - **每个JVM只有一个Runtime实例**。即为运行时环境，相当于内存结构的中间的那个框框：运行时环境。
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210320142834217.png" alt="image-20210320142834217" style="zoom:33%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2057%201628506677%201628506677240%20nUnfyq%20image-20210320142834217.png" alt="image-20210320142834217" style="zoom:33%;float:left" />
 
 #### p3: 线程
 
@@ -841,7 +841,7 @@
 
 - **概述:**
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210322111956283.png" alt="image-20210322111956283" style="zoom:35%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2058%201628506678%201628506678014%20rDLEPO%20image-20210322111956283.png" alt="image-20210322111956283" style="zoom:35%;float:left" />
 
   - JVM中的程序计数寄存器（Program Counter Register）中，Register的命名源于CPU的寄存器，**寄存器存储指令相关的现场信息**。CPU只有把数据装载到寄存器才能够运行。
   - 这里，并非是广义上所指的物理寄存器，或许将其翻译为PC计数器（或指令计数器）会更加贴切（也称为程序钩子），并且也不容易引起一些不必要的误会。**JVM中的PC寄存器是对物理PC寄存器的一种抽象模拟**。
@@ -856,11 +856,11 @@
 
   - PC寄存器用来存储指向下一条指令的地址，也即将要执行的指令代码。由执行引擎读取下一条指令，并执行该指令。
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210322112303689.png" alt="image-20210322112303689" style="zoom: 25%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2058%201628506678%201628506678817%20PzymcN%20image-20210322112303689.png" alt="image-20210322112303689" style="zoom: 25%;float:left" />
 
   - 左边的数字代表**指令地址（指令偏移）**，即 PC 寄存器中可能存储的值，然后执行引擎读取 PC 寄存器中的值，并执行该指令
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210322112454333.png" alt="image-20210322112454333" style="zoom:25%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2057%2059%201628506679%201628506679766%20vRixDT%20image-20210322112454333.png" alt="image-20210322112454333" style="zoom:25%;float:left" />
 
 - **面试题:**
 
@@ -870,7 +870,7 @@
 
     - JVM的字节码解释器就需要通过改变PC寄存器的值来明确下一条应该执行什么样的字节码指令
 
-      <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210322112704209.png" alt="image-20210322112704209" style="zoom:25%;float:left" />
+      <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2000%201628506680%201628506680797%20SxDF9v%20image-20210322112704209.png" alt="image-20210322112704209" style="zoom:25%;float:left" />
 
   - **二 :  PC寄存器为什么设定为私有的?**
 
@@ -905,7 +905,7 @@
 
   - **概念**
     - Java虚拟机栈（Java Virtual Machine Stack），早期也叫Java栈。每个线程在创建时都会创建一个虚拟机栈，其内部保存一个个的栈帧（Stack Frame），**对应着一次次的Java方法调用**，栈是线程私有的
-    - <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210322160152434.png" alt="image-20210322160152434" style="zoom:25%;float:left" />
+    - <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2001%201628506681%201628506681710%202d35P8%20image-20210322160152434.png" alt="image-20210322160152434" style="zoom:25%;float:left" />
   - **虚拟机栈的生命周期**
     - 生命周期和线程一致，也就是线程结束了，该虚拟机栈也销毁了
   - **虚拟机栈的作用**
@@ -930,7 +930,7 @@
 
 - **设置栈内存大小**
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210322160701276.png" alt="image-20210322160701276" style="zoom:35%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2002%201628506682%201628506682620%20LIcSSx%20image-20210322160701276.png" alt="image-20210322160701276" style="zoom:35%;float:left" />
 
 
 
@@ -949,7 +949,7 @@
 
   - 如果在该方法中调用了其他方法，对应的新的栈帧会被创建出来，放在栈的顶端，成为新的当前帧。
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210322161124999.png" alt="image-20210322161124999" style="zoom:30%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2003%201628506683%201628506683510%207wdSnu%20image-20210322161124999.png" alt="image-20210322161124999" style="zoom:30%;float:left" />
 
     1. **不同线程中所包含的栈帧是不允许存在相互引用的**，即不可能在一个栈帧之中引用另外一个线程的栈帧。
     2. 如果当前方法调用了其他方法，方法返回之际，当前栈帧会传回此方法的执行结果给前一个栈帧，接着，虚拟机会丢弃当前栈帧，使得前一个栈帧重新成为当前栈帧。
@@ -968,10 +968,10 @@
   - 方法返回地址（Return Address）（或方法正常退出或者异常退出的定义）
   - 一些附加信息
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210322161525988.png" alt="image-20210322161525988" style="zoom:30%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2004%201628506684%201628506684228%20XErPFt%20image-20210322161525988.png" alt="image-20210322161525988" style="zoom:30%;float:left" />
   - 并行每个线程下的栈都是私有的，因此每个线程都有自己各自的栈，并且每个栈里面都有很多栈帧，栈帧的大小主要由局部变量表 和 操作数栈决定的
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210322161647563.png" alt="image-20210322161647563" style="zoom:26%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2005%201628506685%201628506685118%204xhN9r%20image-20210322161647563.png" alt="image-20210322161647563" style="zoom:26%;float:left" />
 
 
 
@@ -1018,7 +1018,7 @@
 
     - 如果当前帧是由构造方法或者实例方法创建的，那么**该对象引用this将会存放在index为0的slot处**，其余的参数按照参数表顺序继续排列。（this也相当于一个变量）
 
-    - <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210323155708550.png" alt="image-20210323155708550" style="zoom:33%;float:left" />
+    - <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2007%201628506687%201628506687194%20jmZXA0%20image-20210323155708550.png" alt="image-20210323155708550" style="zoom:33%;float:left" />
 
     
 
@@ -1078,7 +1078,7 @@
 
 
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210324103422179.png" alt="image-20210324103422179" style="zoom:36%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2008%201628506688%201628506688282%20695LGI%20image-20210324103422179.png" alt="image-20210324103422179" style="zoom:36%;float:left" />
 
 ### P4: 动态链接
 
@@ -1247,7 +1247,7 @@
 
   4、在上面，其实还有很多符号引用，比如 Object、System、PrintStream 等等
 
-- <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210324110413406.png" alt="image-20210324110413406" style="zoom:26%;" />			
+- <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2009%201628506689%201628506689720%207OAqh8%20image-20210324110413406.png" alt="image-20210324110413406" style="zoom:26%;" />			
 
 - **为什么要用常量池呢？**
   - 因为在不同的方法，都可能调用常量或者方法，所以只需要存储一份即可，然后记录其引用即可，节省了空间。
@@ -1521,7 +1521,7 @@ interface MethodInterface {
 
 字节码:
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210324145651143.png" alt="image-20210324145651143" style="zoom:30%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2010%201628506690%201628506690631%20AgKzDh%20image-20210324145651143.png" alt="image-20210324145651143" style="zoom:30%;float:left" />
 
 
 
@@ -1557,7 +1557,7 @@ public class Lambda {
 }
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210324145952494.png" alt="image-20210324145952494" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2011%201628506691%201628506691444%20msslUT%20image-20210324145952494.png" alt="image-20210324145952494" style="zoom:33%;float:left" />
 
 
 
@@ -1622,7 +1622,7 @@ Java：String info = "mogu blog"; (Java是静态类型语言的，会先编译�
     - 在方法执行过程中遇到异常（Exception），并且这个异常没有在方法内进行处理，也就是只要在本方法的异常表中没有搜索到匹配的异常处理器，就会导致方法退出，简称**异常完成出口**。
     - 方法执行过程中，抛出异常时的异常处理，存储在一个异常处理表，方便在发生异常的时候找到处理异常的代码
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210326092316959.png" alt="image-20210326092316959" style="zoom:50%;" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2012%201628506692%201628506692501%20NNJove%20image-20210326092316959.png" alt="image-20210326092316959" style="zoom:50%;" />
 
     - 异常处理表：
       - 反编译字节码文件，可得到 Exception table
@@ -1631,7 +1631,7 @@ Java：String info = "mogu blog"; (Java是静态类型语言的，会先编译�
       - target ：出现异常跳转至地址为 11 的指令执行
       - type ：捕获异常的类型
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210326092411261.png" alt="image-20210326092411261" style="zoom:30%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2013%201628506693%201628506693285%20yrExN4%20image-20210326092411261.png" alt="image-20210326092411261" style="zoom:30%;float:left" />
 
 
 
@@ -1734,7 +1734,7 @@ public class StringBuilderTest {
 
 - **本地方法**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210326095819096.png" alt="image-20210326095819096" style="zoom:38%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2014%201628506694%201628506694098%20ZxDCm6%20image-20210326095819096.png" alt="image-20210326095819096" style="zoom:38%;float:left" />
 
 1. 简单地讲，**一个Native Method是一个Java调用非Java代码的接囗**一个Native Method是这样一个Java方法：该方法的实现由非Java语言实现，比如C。这个特征并非Java所特有，很多其它的编程语言都有这一机制，比如在C++中，你可以用extern 告知C++编译器去调用一个C的函数。
 2. “A native method is a Java method whose implementation is provided by non-java code.”（本地方法是一个非Java的方法，它的具体实现是非Java代码的实现）
@@ -1794,7 +1794,7 @@ Java使用起来非常方便，然而有些层次的任务用Java实现起来不
 4. 本地方法一般是使用C语言或C++语言实现的。
 5. 它的具体做法是Native Method Stack中登记native方法，在Execution Engine 执行时加载本地方法库。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210326101350086.png" alt="image-20210326101350086" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-1/2021%2008%2009%2018%2058%2015%201628506695%201628506695261%20A6ah4o%20image-20210326101350086.png" alt="image-20210326101350086" style="zoom:33%;float:left" />
 
 **注意事项**
 
