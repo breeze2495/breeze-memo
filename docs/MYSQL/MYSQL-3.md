@@ -77,7 +77,7 @@ select id, name , status from tb_book;
    SHOW VARIABLES LIKE 'have_query_cache';
    ```
 
-   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2030%201635392610%201635392610513%20s8lWZc%20image-20210705142724759.png" alt="image-20210705142724759" style="zoom:50%;float:left" />
+   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2030%201635392610%201635392610513%20s8lWZc%20image-20210705142724759.png" alt="image-20210705142724759" style="zoom:50%" />
 
 2. 查看mysql是否开启了查询缓存;
 
@@ -85,7 +85,7 @@ select id, name , status from tb_book;
    SHOW VARIABLES LIKE 'query_cache_type';
    ```
 
-   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2031%201635392611%201635392611343%208JJFdc%20image-20210705142829494.png" alt="image-20210705142829494" style="zoom:50%;float:left" />
+   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2031%201635392611%201635392611343%208JJFdc%20image-20210705142829494.png" alt="image-20210705142829494" style="zoom:50%" />
 
 3. 查看查询缓存的占用大小;
 
@@ -93,7 +93,7 @@ select id, name , status from tb_book;
    SHOW VARIABLES LIKE 'query_cache_size';
    ```
 
-   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2031%201635392611%201635392611943%20CyZAgq%20image-20210705142914676.png" alt="image-20210705142914676" style="zoom:50%;float:left" />
+   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2031%201635392611%201635392611943%20CyZAgq%20image-20210705142914676.png" alt="image-20210705142914676" style="zoom:50%" />
 
 4. 查看查询缓存的状态变量;
 
@@ -101,26 +101,12 @@ select id, name , status from tb_book;
    SHOW STATUS LIKE 'Qcache%';
    ```
 
-   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2032%201635392612%201635392612465%20bLdRdt%20image-20210705143100216.png" alt="image-20210705143100216" style="zoom:50%;float:left" />**
-
-   
-
-
+   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2032%201635392612%201635392612465%20bLdRdt%20image-20210705143100216.png" alt="image-20210705143100216" style="zoom:50%" />
 
 
 
 各个变量的含义:
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2033%201635392613%201635392613118%203w5q7K%20image-20210705143214519.png" alt="image-20210705143214519" style="zoom:50%;float:Left" />
-
-
-
-
-
-
-
-
-
-
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2033%201635392613%201635392613118%203w5q7K%20image-20210705143214519.png" alt="image-20210705143214519" style="zoom:50%" />
 
 
 
@@ -130,11 +116,11 @@ select id, name , status from tb_book;
 
 MySQL的查询缓存默认是关闭的，需要手动配置参数 query_cache_type ， 来开启查询缓存。query_cache_type 该参数的可取值有三个 :
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2034%201635392614%201635392614232%20dEeJ1l%20image-20210705143356504.png" alt="image-20210705143356504" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2034%201635392614%201635392614232%20dEeJ1l%20image-20210705143356504.png" alt="image-20210705143356504" style="zoom:50%" />
 
 在 /usr/my.cnf 配置中，增加以下配置 :
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2034%201635392614%201635392614966%20ev6pN8%20image-20210705143426979.png" alt="image-20210705143426979" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2034%201635392614%201635392614966%20ev6pN8%20image-20210705143426979.png" alt="image-20210705143426979" style="zoom:50%" />
 
 配置完毕之后，重启服务即可生效;
 
@@ -398,7 +384,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      select * from tb_book;
      ```
 
-     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2035%201635392615%201635392615517%20JC95yx%20image-20210708213448439.png" alt="image-20210708213448439" style="zoom:50%;float:left" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2035%201635392615%201635392615517%20JC95yx%20image-20210708213448439.png" alt="image-20210708213448439" style="zoom:50%" />
 
      可以正常执行 ， 查询出数据。
 
@@ -410,7 +396,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      select * from tb_book;
      ```
 
-     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2035%201635392615%201635392615517%20JC95yx%20image-20210708213448439.png" alt="image-20210708213448439" style="zoom:50%;float:left" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2035%201635392615%201635392615517%20JC95yx%20image-20210708213448439.png" alt="image-20210708213448439" style="zoom:50%" />
 
 - **客户端一**
 
@@ -420,7 +406,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      select name from tb_seller;
      ```
 
-     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2040%201635392620%201635392620578%209tAzU7%20image-20210708213732064.png" alt="image-20210708213732064" style="zoom:50%;float:left" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2040%201635392620%201635392620578%209tAzU7%20image-20210708213732064.png" alt="image-20210708213732064" style="zoom:50%" />
 
 - **客户端二**
 
@@ -440,7 +426,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      insert into tb_book values(null,'Mysql高级','2088-01-01','1');
      ```
 
-     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2043%201635392623%201635392623488%20HbdUZE%20image-20210708214113477.png" alt="image-20210708214113477" style="zoom:50%;float:left" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2043%201635392623%201635392623488%20HbdUZE%20image-20210708214113477.png" alt="image-20210708214113477" style="zoom:50%" />
      
      执行插入， 直接报错 ， 由于当前tb_book 获得的是读锁， 不能执行更新操作。
 
@@ -452,7 +438,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      insert into tb_book values(null,'Mysql高级','2088-01-01','1');
      ```
 
-     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2044%201635392624%201635392624232%204Eqlvk%20image-20210708214631635.png" alt="image-20210708214631635" style="zoom:50%;float:left" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2044%201635392624%201635392624232%204Eqlvk%20image-20210708214631635.png" alt="image-20210708214631635" style="zoom:50%" />
 
      当在客户端一中释放锁指令 unlock tables 后 ， 客户端二中的 inesrt 语句 ， 立即执行 ;
 
@@ -581,7 +567,7 @@ show status like 'Table_locks%';
   show variable like 'tx_isolation';	
   ```
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2049%201635392629%201635392629376%20GYHs7d%20image-20210709151526412.png" alt="image-20210709151526412" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2049%201635392629%201635392629376%20GYHs7d%20image-20210709151526412.png" alt="image-20210709151526412" style="zoom:50%" />
 
 
 
@@ -665,7 +651,7 @@ show index from test_innodb_lock ;
 show status like 'innodb_row_lock%';
 ```
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2054%201635392634%201635392634324%20rYDK7S%20image-20210709154016985.png" alt="image-20210709154016985" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2054%201635392634%201635392634324%20rYDK7S%20image-20210709154016985.png" alt="image-20210709154016985" style="zoom:50%" />
 
 ```mysql
 Innodb_row_lock_current_waits: 当前正在等待锁定的数量 

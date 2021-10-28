@@ -28,7 +28,7 @@
 
 ### P2: 四大类-对比
 
-### <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210316193657721.png" alt="image-20210316193657721" style="zoom: 33%;" />	
+<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210316193657721.png" alt="image-20210316193657721" style="zoom: 33%;" />	
 
 
 

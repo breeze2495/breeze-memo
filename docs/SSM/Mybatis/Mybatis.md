@@ -22,7 +22,7 @@
 
 - 在mybatis3.1之后, 可以配置本地缓存的作用域. 在 mybatis.xml 中配置
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Mybatis/2021%2010%2028%2014%2022%2011%201635402131%201635402131731%20sW35Bi%20image-20210717133104047.png" alt="image-20210717133104047" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Mybatis/2021%2010%2028%2014%2022%2011%201635402131%201635402131731%20sW35Bi%20image-20210717133104047.png" alt="image-20210717133104047" style="zoom:50%" />
 
 
 
@@ -135,4 +135,4 @@
 
 ### P4:  缓存使用流程
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Mybatis/2021%2010%2028%2014%2022%2012%201635402132%201635402132719%20rkEOqs%20image-20210717140410954.png" alt="image-20210717140410954" style="zoom:50%;float:left" /> 
+<img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Mybatis/2021%2010%2028%2014%2022%2012%201635402132%201635402132719%20rkEOqs%20image-20210717140410954.png" alt="image-20210717140410954" style="zoom:50%" /> 

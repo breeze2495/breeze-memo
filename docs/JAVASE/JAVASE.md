@@ -62,7 +62,7 @@
 
 `除了以Map结尾的类之外,其他类都实现了Collection接口`
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2019%201635391579%201635391579068%20qIckG9%20image-20210804112012458.png" alt="image-20210804112012458" style="zoom:30%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2019%201635391579%201635391579068%20qIckG9%20image-20210804112012458.png" alt="image-20210804112012458" style="zoom:30%" />
 
 - **List , Set , Map三者区别**
   - **List:** 存储的元素有序可重复
@@ -886,7 +886,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 `TreeMap` 和`HashMap` 都继承自`AbstractMap` ，但是需要注意的是`TreeMap`它还实现了`NavigableMap`接口和`SortedMap` 接口。
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2020%201635391580%201635391580107%20AxxeEE%20image-20210805091937200.png" alt="image-20210805091937200" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2020%201635391580%201635391580107%20AxxeEE%20image-20210805091937200.png" alt="image-20210805091937200" style="zoom:50%" />
 
 实现 `NavigableMap` 接口让 `TreeMap` 有了对集合内元素的搜索的能力。
 
@@ -935,7 +935,7 @@ static int hash(int h) {
 
 **当链表长度大于阈值(默认为8)时,将链表转化为红黑树,以减少搜索时间,(将链表转化成红黑树之前,如果当前数组长度小于64,会先将数组扩容,而不是直接转换成红黑树)**
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2020%201635391580%201635391580924%209TNtcW%20image-20210805100240587.png" alt="image-20210805100240587" style="zoom:30%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2020%201635391580%201635391580924%209TNtcW%20image-20210805100240587.png" alt="image-20210805100240587" style="zoom:30%" />
 
 > TreeMap、TreeSet 以及 JDK1.8 之后的 HashMap 底层都用到了红黑树。红黑树就是为了解决二叉查找树的缺陷，因为二叉查找树在某些情况下会退化成一个线性结构。
 
@@ -974,15 +974,15 @@ static int hash(int h) {
 
   - **Hashtable**
 
-    <img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2022%201635391582%201635391582014%20l5rTgA%20image-20210805145657746.png" alt="image-20210805145657746" style="zoom:50%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2022%201635391582%201635391582014%20l5rTgA%20image-20210805145657746.png" alt="image-20210805145657746" style="zoom:50%" />
 
   - **JDK1.7 ConcurrentHashMap**
 
-    <img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2024%201635391584%201635391584358%200TYzZA%20image-20210805145822194.png" alt="image-20210805145822194" style="zoom:50%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2024%201635391584%201635391584358%200TYzZA%20image-20210805145822194.png" alt="image-20210805145822194" style="zoom:50%" />
 
   - **JDK1.8 ConcurrentHashMap**
 
-    <img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2025%201635391585%201635391585569%20OvEVKH%20image-20210805150140857.png" alt="image-20210805150140857" style="zoom:50%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/JAVASE/JAVASE/2021%2010%2028%2011%2026%2025%201635391585%201635391585569%20OvEVKH%20image-20210805150140857.png" alt="image-20210805150140857" style="zoom:50%" />
 
     JDK1.8 的 `ConcurrentHashMap` 不在是 **Segment 数组 + HashEntry 数组 + 链表**，而是 **Node 数组 + 链表 / 红黑树**。不过，Node 只能用于链表的情况，红黑树的情况需要使用 **`TreeNode`**。当冲突链表达到一定长度时，链表会转换成红黑树。
 

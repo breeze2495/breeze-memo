@@ -82,7 +82,7 @@ index_col_name : column_name[(length)][ASC | DESC]
 
 示例: 为city表中的city_name字段创建索引
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2031%201635392491%201635392491702%201xioej%20image-20210702083158062.png" alt="image-20210702083158062" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2031%201635392491%201635392491702%201xioej%20image-20210702083158062.png" alt="image-20210702083158062" style="zoom:50%" />
 
 
 
@@ -94,9 +94,9 @@ show index from table_name;
 
 示例:查看city表中的索引信息
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2032%201635392492%201635392492568%20raN8Ag%20image-20210702083318456.png" alt="image-20210702083318456" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2032%201635392492%201635392492568%20raN8Ag%20image-20210702083318456.png" alt="image-20210702083318456" style="zoom:50%" />
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2033%201635392493%201635392493547%20cKYC7S%20image-20210702083403288.png" alt="image-20210702083403288" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2033%201635392493%201635392493547%20cKYC7S%20image-20210702083403288.png" alt="image-20210702083403288" style="zoom:50%" />
 
 
 
@@ -108,7 +108,7 @@ show index from table_name;
 
 示例:  删除city表上的索引 idx_city_name
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2034%201635392494%201635392494259%20OW8uz9%20image-20210702083516759.png" alt="image-20210702083516759" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2034%201635392494%201635392494259%20OW8uz9%20image-20210702083516759.png" alt="image-20210702083516759" style="zoom:50%" />
 
 
 
@@ -164,11 +164,11 @@ show index from table_name;
 select * from tb_item where id = 1999\G;
 ```
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2034%201635392494%201635392494792%20Z2sfhh%20image-20210703150035142.png" alt="image-20210703150035142" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2034%201635392494%201635392494792%20Z2sfhh%20image-20210703150035142.png" alt="image-20210703150035142" style="zoom:50%" />
 
  查询速度很快， 接近0s ， 主要的原因是因为id为主键， 有索引;
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2035%201635392495%201635392495469%20ok05da%20image-20210703150127386.png" alt="image-20210703150127386" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2035%201635392495%201635392495469%20ok05da%20image-20210703150127386.png" alt="image-20210703150127386" style="zoom:50%" />
 
 - **根据title进行精确查询**
 
@@ -176,11 +176,11 @@ select * from tb_item where id = 1999\G;
 select * from tb_item where title = 'iphoneX 移动3G 32G941'\G;
 ```
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2036%201635392496%201635392496076%20aIg979%20image-20210703150221355.png" alt="image-20210703150221355" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2036%201635392496%201635392496076%20aIg979%20image-20210703150221355.png" alt="image-20210703150221355" style="zoom:50%" />
 
 查看SQL语句的执行计划 :
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2040%201635392500%201635392500500%20bAI2TB%20image-20210703150316700.png" alt="image-20210703150316700" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2040%201635392500%201635392500500%20bAI2TB%20image-20210703150316700.png" alt="image-20210703150316700" style="zoom:50%" />
 
 优化: 针对title字段,创建索引
 
@@ -188,15 +188,15 @@ select * from tb_item where title = 'iphoneX 移动3G 32G941'\G;
 create index idx_item_title on tb_item(title);
 ```
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2041%201635392501%201635392501210%20Crm6O1%20image-20210703150448838.png" alt="image-20210703150448838" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2041%201635392501%201635392501210%20Crm6O1%20image-20210703150448838.png" alt="image-20210703150448838" style="zoom:50%" />
 
 索引创建完成之后，再次进行查询 :
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2041%201635392501%201635392501779%20vowCM9%20image-20210703150647228.png" alt="image-20210703150647228" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2041%201635392501%201635392501779%20vowCM9%20image-20210703150647228.png" alt="image-20210703150647228" style="zoom:50%" />
 
 通过explain ， 查看执行计划，执行SQL时使用了刚才创建的索引
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2042%201635392502%201635392502441%20l9q1ib%20image-20210703150712051.png" alt="image-20210703150712051" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2042%201635392502%201635392502441%20l9q1ib%20image-20210703150712051.png" alt="image-20210703150712051" style="zoom:50%" />
 
 
 
@@ -245,7 +245,7 @@ create index idx_seller_name_sta_addr on tb_seller(name,status,address);
   explain select * from tb_seller where name='小米科技' and status='1' and address='北京市'\G;
   ```
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2043%201635392503%201635392503155%209ab1qe%20image-20210703151430065.png" alt="image-20210703151430065" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2043%201635392503%201635392503155%209ab1qe%20image-20210703151430065.png" alt="image-20210703151430065" style="zoom:50%" />
 
 
 
@@ -255,20 +255,21 @@ create index idx_seller_name_sta_addr on tb_seller(name,status,address);
 
   - 匹配最左前缀法则，走索引:
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2044%201635392504%201635392504053%20TPBNrU%20image-20210703151609268.png" alt="image-20210703151609268" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2044%201635392504%201635392504053%20TPBNrU%20image-20210703151609268.png" alt="image-20210703151609268" style="zoom:50%" />
 
   - 违法最左前缀法则 ， 索引失效:
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2044%201635392504%201635392504959%20nG2Gba%20image-20210703154739261.png" alt="image-20210703154739261" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2044%201635392504%201635392504959%20nG2Gba%20image-20210703154739261.png" alt="image-20210703154739261" style="zoom:50%" />
+  
   - 如果符合最左法则，但是出现跳跃某一列，只有最左列索引生效:
-
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2045%201635392505%201635392505665%208K82aX%20image-20210703154841895.png" alt="image-20210703154841895" style="zoom:50%;float:left" />
+  
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2045%201635392505%201635392505665%208K82aX%20image-20210703154841895.png" alt="image-20210703154841895" style="zoom:50%" />
 
 
 
 - **范围查询右边的列，不能使用索引**
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2046%201635392506%201635392506405%20wBAR1d%20image-20210703154959578.png" alt="image-20210703154959578" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2046%201635392506%201635392506405%20wBAR1d%20image-20210703154959578.png" alt="image-20210703154959578" style="zoom:50%" />
 
   根据前面的两个字段name ， status 查询是走索引的， 但是最后一个条件address 没有用到索引。
 
@@ -276,13 +277,13 @@ create index idx_seller_name_sta_addr on tb_seller(name,status,address);
 
 - **不要在索引列上进行运算操作,索引将失效**
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2047%201635392507%201635392507102%20c8pUiw%20image-20210703155259293.png" alt="image-20210703155259293" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2047%201635392507%201635392507102%20c8pUiw%20image-20210703155259293.png" alt="image-20210703155259293" style="zoom:50%" />
 
 
 
 - **字符串不加单引号，造成索引失效。**
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2047%201635392507%201635392507937%20MYfSD6%20image-20210703155409031.png" alt="image-20210703155409031" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2047%201635392507%201635392507937%20MYfSD6%20image-20210703155409031.png" alt="image-20210703155409031" style="zoom:50%" />
 
   由于在查询时，没有对字符串加单引号，MySQL的查询优化器，会自动的进行类型转换，造成索引失效。
 
@@ -292,11 +293,11 @@ create index idx_seller_name_sta_addr on tb_seller(name,status,address);
 
   尽量使用覆盖索引(只访问索引的查询(索引列完全包含查询列))，减少select * 。
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2048%201635392508%201635392508821%20o5VNas%20image-20210703155522942.png" alt="image-20210703155522942" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2048%201635392508%201635392508821%20o5VNas%20image-20210703155522942.png" alt="image-20210703155522942" style="zoom:50%" />
 
   如果查询列，超出索引列，也会降低性能。
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2049%201635392509%201635392509660%20jWGTBi%20image-20210703155739883.png" alt="image-20210703155739883" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2049%201635392509%201635392509660%20jWGTBi%20image-20210703155739883.png" alt="image-20210703155739883" style="zoom:50%" />
 
   ```mysql
   using index:使用覆盖索引的时候就会出现
@@ -322,7 +323,7 @@ create index idx_seller_name_sta_addr on tb_seller(name,status,address);
   explain select * from tb_seller where name='黑马程序员' or createtime = '2088-01-01 12:00:00'\G;
   ```
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2050%201635392510%201635392510950%20jPD7XA%20image-20210703161202044.png" alt="image-20210703161202044" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2050%201635392510%201635392510950%20jPD7XA%20image-20210703161202044.png" alt="image-20210703161202044" style="zoom:50%" />
 
 
 
@@ -330,29 +331,29 @@ create index idx_seller_name_sta_addr on tb_seller(name,status,address);
 
   如果仅仅是尾部模糊匹配，索引不会失效。如果是头部模糊匹配，索引失效。
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2051%201635392511%201635392511752%20YyxzRU%20image-20210703161341267.png" alt="image-20210703161341267" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2051%201635392511%201635392511752%20YyxzRU%20image-20210703161341267.png" alt="image-20210703161341267" style="zoom:50%" />
 
   解决: 通过覆盖索引来解决
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2052%201635392512%201635392512865%20Dmd1ea%20image-20210703161504169.png" alt="image-20210703161504169" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2052%201635392512%201635392512865%20Dmd1ea%20image-20210703161504169.png" alt="image-20210703161504169" style="zoom:50%" />
 
 
 
 - **如果mysql评估使用索引比全表更慢,则不适用索引**
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2053%201635392513%201635392513951%20tHe6ml%20image-20210703161718955.png" alt="image-20210703161718955" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2053%201635392513%201635392513951%20tHe6ml%20image-20210703161718955.png" alt="image-20210703161718955" style="zoom:50%" />
 
 
 
 - **is NULL ， is NOT NULL 有时索引失效**
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2054%201635392514%201635392514930%20I6hQg4%20image-20210703161751993.png" alt="image-20210703161751993" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2041%2054%201635392514%201635392514930%20I6hQg4%20image-20210703161751993.png" alt="image-20210703161751993" style="zoom:50%" />
 
 
 
 - **in 走索引， not in 索引失效**
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2000%201635392520%201635392520173%20NDjcea%20image-20210703162009344.png" alt="image-20210703162009344" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2000%201635392520%201635392520173%20NDjcea%20image-20210703162009344.png" alt="image-20210703162009344" style="zoom:50%" />
 
 
 
@@ -386,7 +387,7 @@ show status like 'Handler_read%';
 show global status like 'Handler_read%';
 ```
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2000%201635392520%201635392520894%203Lu9vF%20image-20210703162403285.png" alt="image-20210703162403285" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2000%201635392520%201635392520894%203Lu9vF%20image-20210703162403285.png" alt="image-20210703162403285" style="zoom:50%" />
 
 ```mysql
 Handler_read_first:索引中第一条被读的次数。如果较高，表示服务器正执行大量全索引扫描(这个值越低 越好)。
@@ -449,7 +450,7 @@ as
 select t.*,c.country_name from country c , city t where c.country_id = t.country_id;
 ```
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2001%201635392521%201635392521849%20jcxfqg%20image-20210702092059635.png" alt="image-20210702092059635" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2001%201635392521%201635392521849%20jcxfqg%20image-20210702092059635.png" alt="image-20210702092059635" style="zoom:50%" />
 
 
 
@@ -457,15 +458,15 @@ select t.*,c.country_name from country c , city t where c.country_id = t.country
 
 从 MySQL 5.1 版本开始，使用 SHOW TABLES 命令的时候不仅显示表的名字，同时也会显示视图的名字，而不存 在单独显示视图的 SHOW VIEWS 命令。
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2002%201635392522%201635392522585%20GocvMt%20image-20210702092141024.png" alt="image-20210702092141024" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2002%201635392522%201635392522585%20GocvMt%20image-20210702092141024.png" alt="image-20210702092141024" style="zoom:50%" />
 
 同样，在使用 SHOW TABLE STATUS 命令的时候，不但可以显示表的信息，同时也可以显示视图的信息。
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2003%201635392523%201635392523236%20c1EJPN%20image-20210702092210586.png" alt="image-20210702092210586" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2003%201635392523%201635392523236%20c1EJPN%20image-20210702092210586.png" alt="image-20210702092210586" style="zoom:50%" />
 
 如果需要查询某个视图的定义，可以使用 SHOW CREATE VIEW 命令进行查看 :
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2003%201635392523%201635392523880%20QxJrOU%20image-20210702092232113.png" alt="image-20210702092232113" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2003%201635392523%201635392523880%20QxJrOU%20image-20210702092232113.png" alt="image-20210702092232113" style="zoom:50%" />
 
 
 
@@ -666,7 +667,7 @@ end$
 delimiter ;
 ```
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2004%201635392524%201635392524758%20LNaE6T%20image-20210702094147803.png" alt="image-20210702094147803" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2042%2004%201635392524%201635392524758%20LNaE6T%20image-20210702094147803.png" alt="image-20210702094147803" style="zoom:50%" />
 
 
 

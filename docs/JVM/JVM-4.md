@@ -4,7 +4,7 @@
 
 ### P1: 垃圾回收概述
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2034%201628506954%201628506954068%20CGPvwc%20image-20210413211224577.png" alt="image-20210413211224577" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2034%201628506954%201628506954068%20CGPvwc%20image-20210413211224577.png" alt="image-20210413211224577" style="zoom:33%" />
 
 1. Java 和 C++语言的区别，就在于垃圾收集技术和内存动态分配上，C++语言没有垃圾收集技术，需要程序员手动的收集。
 2. 垃圾收集，不是Java语言的伴生产物。早在1960年，第一门开始使用内存动态分配和垃圾收集技术的Lisp语言诞生。
@@ -66,15 +66,7 @@
 
 ##### D2: 应该关心哪些区域的回收?
 
-​	<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2035%201628506955%201628506955016%20UCB5if%20image-20210413212043870.png" alt="image-20210413212043870" style="zoom:33%;float:left" />	
-
-
-
-
-
-
-
-
+​	<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2035%201628506955%201628506955016%20UCB5if%20image-20210413212043870.png" alt="image-20210413212043870" style="zoom:33%" />	
 
 
 
@@ -113,7 +105,7 @@
 
 - **循环引用**
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2036%201628506956%201628506956453%20OeWbIj%20image-20210413212511907.png" alt="image-20210413212511907" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2036%201628506956%201628506956453%20OeWbIj%20image-20210413212511907.png" alt="image-20210413212511907" style="zoom:33%" />
 
   当p的指针断开的时候，内部的引用形成一个循环，计数器都还算1，无法被回收，这就是循环引用，从而造成内存泄漏
 
@@ -147,7 +139,7 @@
   }
   ```
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2038%201628506958%201628506958001%2001e5cV%20image-20210413212616408.png" alt="image-20210413212616408" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2038%201628506958%201628506958001%2001e5cV%20image-20210413212616408.png" alt="image-20210413212616408" style="zoom:33%" />
 
   - 如果不小心直接把`obj1.reference`和`obj2.reference`置为null。则在Java堆中的两块内存依然保持着互相引用，无法被回收
 
@@ -226,7 +218,7 @@
 3. 如果目标对象没有任何引用链相连，则是不可达的，就意味着该对象己经死亡，可以标记为垃圾对象。
 4. 在可达性分析算法中，只有能够被根对象集合直接或者间接连接的对象才是存活对象。
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2039%201628506959%201628506959322%20ylX81v%20image-20210413215841972.png" alt="image-20210413215841972" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2039%201628506959%201628506959322%20ylX81v%20image-20210413215841972.png" alt="image-20210413215841972" style="zoom:33%" />
 
 
 
@@ -244,7 +236,7 @@
    - 基本数据类型对应的Class对象，一些常驻的异常对象（如：NullPointerException、OutofMemoryError），系统类加载器。
 7. 反映java虚拟机内部情况的JMXBean、JVMTI中注册的回调、本地代码缓存等。
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2040%201628506960%201628506960193%20obW2yi%20image-20210413215933660.png" alt="image-20210413215933660" style="zoom:25%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2040%201628506960%201628506960193%20obW2yi%20image-20210413215933660.png" alt="image-20210413215933660" style="zoom:25%" />
 
 1. 总结一句话就是，除了堆空间的周边，比如：虚拟机栈、本地方法栈、方法区、字符串常量池等地方对堆空间进行引用的，都可以作为GC Roots进行可达性分析
 
@@ -318,7 +310,7 @@ protected void finalize() throws Throwable { }
 
 **通过 JVisual VM 查看 Finalizer 线程**
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2041%201628506961%201628506961696%206W8F47%20image-20210413220248214.png" alt="image-20210413220248214" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2041%201628506961%201628506961696%206W8F47%20image-20210413220248214.png" alt="image-20210413220248214" style="zoom:33%" />
 
 
 
@@ -429,7 +421,7 @@ obj is dead
 
 **方式一：命令行使用 jmap**
 
-<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2043%201628506963%201628506963129%204zMYUb%20image-20210413220652601.png" alt="image-20210413220652601" style="zoom:33%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2043%201628506963%201628506963129%204zMYUb%20image-20210413220652601.png" alt="image-20210413220652601" style="zoom:33%" />
 
 **方式二：使用JVisualVM**
 
@@ -477,23 +469,23 @@ obj is dead
 
   1、先执行第一步，然后停下来，去生成此步骤dump文件
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2043%201628506963%201628506963986%20lfSQWX%20image-20210413220910714.png" alt="image-20210413220910714" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2043%201628506963%201628506963986%20lfSQWX%20image-20210413220910714.png" alt="image-20210413220910714" style="zoom:33%" />
 
   2、 点击【堆 Dump】
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2044%201628506964%201628506964889%20agtaA3%20image-20210413220934118.png" alt="image-20210413220934118" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2044%201628506964%201628506964889%20agtaA3%20image-20210413220934118.png" alt="image-20210413220934118" style="zoom:33%" />
 
   3、右键 --> 另存为即可
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2045%201628506965%201628506965969%20NJpvEM%20image-20210413220955735.png" alt="image-20210413220955735" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2045%201628506965%201628506965969%20NJpvEM%20image-20210413220955735.png" alt="image-20210413220955735" style="zoom:33%" />
 
   4、输入命令，继续执行程序
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2047%201628506967%201628506967203%20LhJoUC%20image-20210413221017368.png" alt="image-20210413221017368" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2047%201628506967%201628506967203%20LhJoUC%20image-20210413221017368.png" alt="image-20210413221017368" style="zoom:33%" />
 
   5、我们接着捕获第二张堆内存快照
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2049%201628506969%201628506969293%20WAL2Ya%20image-20210413221038770.png" alt="image-20210413221038770" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2049%201628506969%201628506969293%20WAL2Ya%20image-20210413221038770.png" alt="image-20210413221038770" style="zoom:33%" />
 
 - **使用MAT查看堆内存快照**
 
@@ -501,19 +493,19 @@ obj is dead
 
   > 点击Open Heap Dump也行
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2050%201628506970%201628506970574%202PZb2b%20image-20210413221307451.png" alt="image-20210413221307451" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2050%201628506970%201628506970574%202PZb2b%20image-20210413221307451.png" alt="image-20210413221307451" style="zoom:33%" />
 
   2、选择Java Basics --> GC Roots
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2051%201628506971%201628506971603%202TxFdd%20image-20210413221334680.png" alt="image-20210413221334680" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2051%201628506971%201628506971603%202TxFdd%20image-20210413221334680.png" alt="image-20210413221334680" style="zoom:33%;" />
 
   3、第一次捕捉堆内存快照时，GC Roots 中包含我们定义的两个局部变量，类型分别为 ArrayList 和 Date，Total:21
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2053%201628506973%201628506973021%20KcYUB4%20image-20210413221401729.png" alt="image-20210413221401729" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2053%201628506973%201628506973021%20KcYUB4%20image-20210413221401729.png" alt="image-20210413221401729" style="zoom:33%" />
 
   4、打开第二个dump文件，第二次捕获内存快照时，由于两个局部变量引用的对象被释放，所以这两个局部变量不再作为 GC Roots ，从 Total Entries = 19 也可以看出（少了两个 GC Roots）
 
-  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2054%201628506974%201628506974653%20gQZmSv%20image-20210413221423053.png" alt="image-20210413221423053" style="zoom:33%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/JVM/JVM-4/2021%2008%2009%2019%2002%2054%201628506974%201628506974653%20gQZmSv%20image-20210413221423053.png" alt="image-20210413221423053" style="zoom:33%" />
 
 ##### D4: JProfiler GC Roots溯源
 
