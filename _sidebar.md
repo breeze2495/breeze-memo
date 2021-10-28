@@ -34,7 +34,7 @@
 
 - 组件篇
 
-  - [Redis](./docs/Redis/Redis.md)
+  - [Redis](./docs/redis/redis.md)
   - Es
   - RabbitMQ
   - Dubbo
