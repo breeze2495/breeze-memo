@@ -34,7 +34,7 @@
 
 - 组件篇
 
-  - [Redis](./docs/REDIS/REDIS.md)
+  - [Redis](./docs/Redis/Redis.md)
   - Es
   - RabbitMQ
   - Dubbo
@@ -42,5 +42,5 @@
 
 - 项目篇
 
-  - [breeze-mvc](./docs/breezemvc/breeze-mvc.md)
+  - [breeze-mvc](./docs/breezeMVC/breeze-mvc.md)
 
