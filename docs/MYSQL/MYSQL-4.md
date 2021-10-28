@@ -35,7 +35,7 @@ mysql -h127.0.0.1 -P3306 -uroot -p2143
 mysql -uroot -p2143 db01 -e "select * from tb_book";
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709214851910.png" alt="image-20210709214851910" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2016%201635392656%201635392656598%20XQuHjP%20image-20210709214851910.png" alt="image-20210709214851910" style="zoom:50%;float:Left" />
 
 
 
@@ -45,7 +45,7 @@ mysqladmin 是一个执行管理操作的客户端程序。可以用它来检查
 
 可以通过 : mysqladmin --help 指令查看帮助文档
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709215258353.png" alt="image-20210709215258353" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2017%201635392657%201635392657881%20sxjQrZ%20image-20210709215258353.png" alt="image-20210709215258353" style="zoom:50%;float:Left" />
 
 ```mysql
 示例 :
@@ -107,7 +107,7 @@ mysqldump [options] --all-databases/-A
     mysqldump -uroot -p2143 -T /tmp test city
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709220631583.png" alt="image-20210709220631583" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2019%201635392659%201635392659371%20uedRSv%20image-20210709220631583.png" alt="image-20210709220631583" style="zoom:50%;float:Left" />
 
 
 
@@ -170,7 +170,7 @@ hostname.err(hostname是主机名)。
 show variables like 'log_error%';
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709221523647.png" alt="image-20210709221523647" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2019%201635392659%201635392659957%20zmZq2f%20image-20210709221523647.png" alt="image-20210709221523647" style="zoom:50%;float:Left" />
 
 **查看日志内容:**
 
@@ -178,7 +178,7 @@ show variables like 'log_error%';
 tail -f /var/lib/mysql/xaxh-server.err
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709221613652.png" alt="image-20210709221613652" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2020%201635392660%201635392660879%20NVma3p%20image-20210709221613652.png" alt="image-20210709221613652" style="zoom:50%;float:Left" />
 
 
 
@@ -239,7 +239,7 @@ mysqlbinlog log-file;
 
   - 查看日志文件:
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709222332079.png" alt="image-20210709222332079" style="zoom:50%;float:Left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2021%201635392661%201635392661882%208RuyC6%20image-20210709222332079.png" alt="image-20210709222332079" style="zoom:50%;float:Left" />
 
     mysqlbin.index : 该文件是日志索引文件 ， 记录日志的文件名
 
@@ -251,7 +251,7 @@ mysqlbinlog log-file;
     mysqlbinlog mysqlbing.000001;
     ```
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709222606962.png" alt="image-20210709222606962" style="zoom:50%;float:Left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2022%201635392662%201635392662397%20X6A3GD%20image-20210709222606962.png" alt="image-20210709222606962" style="zoom:50%;float:Left" />
 
 
 
@@ -277,7 +277,7 @@ mysqlbinlog log-file;
     mysqlbinlog -vv mysqlbin.000002
     ```
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709222745312.png" alt="image-20210709222745312" style="zoom:50%;float:Left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2023%201635392663%201635392663624%20BgtkQa%20image-20210709222745312.png" alt="image-20210709222745312" style="zoom:50%;float:Left" />
 
 
 
@@ -292,7 +292,7 @@ mysqlbinlog log-file;
 
   查询之前 ，先查询下日志文件 :
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709222848444.png" alt="image-20210709222848444" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2024%201635392664%201635392664451%20vVzZFE%20image-20210709222848444.png" alt="image-20210709222848444" style="zoom:50%;float:Left" />
 
   执行删除指令:
 
@@ -300,7 +300,7 @@ mysqlbinlog log-file;
   Reset Master;
   ```
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709222918062.png" alt="image-20210709222918062" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2025%201635392665%201635392665115%20F25rx7%20image-20210709222918062.png" alt="image-20210709222918062" style="zoom:50%;float:Left" />
 
 - **方式二**
 
@@ -321,7 +321,7 @@ mysqlbinlog log-file;
 
   配置如下:
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709223049988.png" alt="image-20210709223049988" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2025%201635392665%201635392665794%207i1RqG%20image-20210709223049988.png" alt="image-20210709223049988" style="zoom:50%;float:Left" />
 
   
 
@@ -339,7 +339,7 @@ general_log_file=file_name
 
 在 mysql 的配置文件 /usr/my.cnf 中配置如下内容 :
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709223435720.png" alt="image-20210709223435720" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2026%201635392666%201635392666420%20qLVyzq%20image-20210709223435720.png" alt="image-20210709223435720" style="zoom:50%;float:Left" />
 
 配置完毕之后，在数据库执行以下操作 :
 
@@ -352,7 +352,7 @@ select * from tb_book where id < 8;
 
 执行完毕之后， 再次来查询日志文件 :
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709223516579.png" alt="image-20210709223516579" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2027%201635392667%201635392667074%202VxrCI%20image-20210709223516579.png" alt="image-20210709223516579" style="zoom:50%;float:Left" />
 
 
 
@@ -383,7 +383,7 @@ long_query_time=10
 
 - 查询long_query_time 的值。
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709223746704.png" alt="image-20210709223746704" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2027%201635392667%201635392667778%20rm5FMD%20image-20210709223746704.png" alt="image-20210709223746704" style="zoom:50%;float:Left" />
 
 - 执行查询操作
 
@@ -391,7 +391,7 @@ long_query_time=10
   select id, title,price,num ,status from tb_item where id = 1;
   ```
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709223825022.png" alt="image-20210709223825022" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2028%201635392668%201635392668485%20TDpJhp%20image-20210709223825022.png" alt="image-20210709223825022" style="zoom:50%;float:Left" />
 
   由于该语句执行时间很短，为0s ， 所以不会记录在慢查询日志中。
 
@@ -399,7 +399,7 @@ long_query_time=10
   select * from tb_item where title like '%阿尔卡特 (OT-927) 炭黑 联通3G手机 双卡双待 165454%' ;
   ```
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709223916705.png" alt="image-20210709223916705" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2029%201635392669%201635392669008%20rOLDwv%20image-20210709223916705.png" alt="image-20210709223916705" style="zoom:50%;float:Left" />
 
   该SQL语句 ， 执行时长为 26.77s ，超过10s ， 所以会记录在慢查询日志文件中。
 
@@ -407,11 +407,11 @@ long_query_time=10
 
   直接通过cat 指令查询该日志文件 :
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709223952473.png" alt="image-20210709223952473" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2029%201635392669%201635392669696%20u0orJP%20image-20210709223952473.png" alt="image-20210709223952473" style="zoom:50%;float:Left" />
 
   如果慢查询日志内容很多， 直接查看文件，比较麻烦， 这个时候可以借助于mysql自带的 mysqldumpslow 工 具， 来对慢查询日志进行分类汇总。
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709224013455.png" alt="image-20210709224013455" style="zoom:50%;float:Left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2030%201635392670%201635392670461%20DhNNtQ%20image-20210709224013455.png" alt="image-20210709224013455" style="zoom:50%;float:Left" />
 
 
 
@@ -426,7 +426,7 @@ MySQL支持一台主库同时向多台从库进行复制， 从库同时也可�
 
 ### d2: 原理
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210710102715263.png" alt="image-20210710102715263" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2031%201635392671%201635392671146%20lzSSb4%20image-20210710102715263.png" alt="image-20210710102715263" style="zoom:50%;" />
 
 从上层来看,复制分成三步:
 
@@ -499,7 +499,7 @@ flush privileges;
 show master status;
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210710104230470.png" alt="image-20210710104230470" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2032%201635392672%201635392672366%20Z0hP7S%20image-20210710104230470.png" alt="image-20210710104230470" style="zoom:50%;float:left" />
 
 字段含义:
 
@@ -544,7 +544,7 @@ start slave;
 show slave status;
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210710104727163.png" alt="image-20210710104727163" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2033%201635392673%201635392673314%20Le9Vqp%20image-20210710104727163.png" alt="image-20210710104727163" style="zoom:50%;float:Left" />
 
 5. 停止同步操作
 
@@ -579,9 +579,9 @@ stop slave;
 
    在从库中，可以查看到刚才创建的数据库:
 
-   <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210710104948484.png" alt="image-20210710104948484" style="zoom:50%;float:Left" />
+   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2034%201635392674%201635392674164%20jT8mES%20image-20210710104948484.png" alt="image-20210710104948484" style="zoom:50%;float:Left" />
 
    在该数据库中，查询user表中的数据:
 
-   <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210710105009180.png" alt="image-20210710105009180" style="zoom:50%;float:Left" />
+   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2044%2034%201635392674%201635392674748%20ZDbkUs%20image-20210710105009180.png" alt="image-20210710105009180" style="zoom:50%;float:Left" />
 

@@ -43,7 +43,7 @@ select id, name , status from tb_book;
 
 通过MySQL的主从复制，实现读写分离，使增删改操作走主节点，查询操作走从节点，从而可以降低单台服务器的读写压力。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210705142334738.png" alt="image-20210705142334738" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2028%201635392608%201635392608355%20ZbDwM6%20image-20210705142334738.png" alt="image-20210705142334738" style="zoom:50%;" />
 
 #### d2: 采用分布式数据库架构
 
@@ -61,7 +61,7 @@ select id, name , status from tb_book;
 
 ### P2: 操作流程
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210705142509713.png" alt="image-20210705142509713" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2029%201635392609%201635392609847%20GqFE2K%20image-20210705142509713.png" alt="image-20210705142509713" style="zoom:50%;" />
 
  1. 客户端发送一条查询给服务器;
 2. 服务器先会检查查询缓存，如果**命中**了缓存，则立即返回存储在缓存中的结果。否则进入下一阶段; 
@@ -77,7 +77,7 @@ select id, name , status from tb_book;
    SHOW VARIABLES LIKE 'have_query_cache';
    ```
 
-   <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210705142724759.png" alt="image-20210705142724759" style="zoom:50%;float:left" />
+   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2030%201635392610%201635392610513%20s8lWZc%20image-20210705142724759.png" alt="image-20210705142724759" style="zoom:50%;float:left" />
 
 2. 查看mysql是否开启了查询缓存;
 
@@ -85,7 +85,7 @@ select id, name , status from tb_book;
    SHOW VARIABLES LIKE 'query_cache_type';
    ```
 
-   <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210705142829494.png" alt="image-20210705142829494" style="zoom:50%;float:left" />
+   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2031%201635392611%201635392611343%208JJFdc%20image-20210705142829494.png" alt="image-20210705142829494" style="zoom:50%;float:left" />
 
 3. 查看查询缓存的占用大小;
 
@@ -93,7 +93,7 @@ select id, name , status from tb_book;
    SHOW VARIABLES LIKE 'query_cache_size';
    ```
 
-   <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210705142914676.png" alt="image-20210705142914676" style="zoom:50%;float:left" />
+   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2031%201635392611%201635392611943%20CyZAgq%20image-20210705142914676.png" alt="image-20210705142914676" style="zoom:50%;float:left" />
 
 4. 查看查询缓存的状态变量;
 
@@ -101,7 +101,7 @@ select id, name , status from tb_book;
    SHOW STATUS LIKE 'Qcache%';
    ```
 
-   <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210705143100216.png" alt="image-20210705143100216" style="zoom:50%;float:left" />**
+   <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2032%201635392612%201635392612465%20bLdRdt%20image-20210705143100216.png" alt="image-20210705143100216" style="zoom:50%;float:left" />**
 
    
 
@@ -110,7 +110,7 @@ select id, name , status from tb_book;
 
 
 各个变量的含义:
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210705143214519.png" alt="image-20210705143214519" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2033%201635392613%201635392613118%203w5q7K%20image-20210705143214519.png" alt="image-20210705143214519" style="zoom:50%;float:Left" />
 
 
 
@@ -130,11 +130,11 @@ select id, name , status from tb_book;
 
 MySQL的查询缓存默认是关闭的，需要手动配置参数 query_cache_type ， 来开启查询缓存。query_cache_type 该参数的可取值有三个 :
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210705143356504.png" alt="image-20210705143356504" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2034%201635392614%201635392614232%20dEeJ1l%20image-20210705143356504.png" alt="image-20210705143356504" style="zoom:50%;float:Left" />
 
 在 /usr/my.cnf 配置中，增加以下配置 :
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210705143426979.png" alt="image-20210705143426979" style="zoom:50%;float:Left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2034%201635392614%201635392614966%20ev6pN8%20image-20210705143426979.png" alt="image-20210705143426979" style="zoom:50%;float:Left" />
 
 配置完毕之后，重启服务即可生效;
 
@@ -398,7 +398,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      select * from tb_book;
      ```
 
-     <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210708213448439.png" alt="image-20210708213448439" style="zoom:50%;float:left" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2035%201635392615%201635392615517%20JC95yx%20image-20210708213448439.png" alt="image-20210708213448439" style="zoom:50%;float:left" />
 
      可以正常执行 ， 查询出数据。
 
@@ -410,7 +410,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      select * from tb_book;
      ```
 
-     <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210708213448439.png" alt="image-20210708213448439" style="zoom:50%;float:left" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2035%201635392615%201635392615517%20JC95yx%20image-20210708213448439.png" alt="image-20210708213448439" style="zoom:50%;float:left" />
 
 - **客户端一**
 
@@ -420,7 +420,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      select name from tb_seller;
      ```
 
-     <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210708213732064.png" alt="image-20210708213732064" style="zoom:50%;float:left" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2040%201635392620%201635392620578%209tAzU7%20image-20210708213732064.png" alt="image-20210708213732064" style="zoom:50%;float:left" />
 
 - **客户端二**
 
@@ -430,7 +430,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      select name from tb_seller;
      ```
 
-     ![image-20210708213823704](/Users/breeze/Library/Application Support/typora-user-images/image-20210708213823704.png)
+     ![image-20210708213823704](https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2042%201635392622%201635392622485%20Btpp6Z%20image-20210708213823704.png)
 
 - **客户端一**
 
@@ -440,7 +440,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      insert into tb_book values(null,'Mysql高级','2088-01-01','1');
      ```
 
-     <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210708214113477.png" alt="image-20210708214113477" style="zoom:50%;float:left" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2043%201635392623%201635392623488%20HbdUZE%20image-20210708214113477.png" alt="image-20210708214113477" style="zoom:50%;float:left" />
      
      执行插入， 直接报错 ， 由于当前tb_book 获得的是读锁， 不能执行更新操作。
 
@@ -452,7 +452,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      insert into tb_book values(null,'Mysql高级','2088-01-01','1');
      ```
 
-     <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210708214631635.png" alt="image-20210708214631635" style="zoom:50%;float:left" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2044%201635392624%201635392624232%204Eqlvk%20image-20210708214631635.png" alt="image-20210708214631635" style="zoom:50%;float:left" />
 
      当在客户端一中释放锁指令 unlock tables 后 ， 客户端二中的 inesrt 语句 ， 立即执行 ;
 
@@ -474,7 +474,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      select * from tb_bool; 
      ```
 
-     <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210708214928582.png" alt="image-20210708214928582" style="zoom:50%;" />
+     <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2044%201635392624%201635392624839%20KbGG9j%20image-20210708214928582.png" alt="image-20210708214928582" style="zoom:50%;" />
 
      查询成功;
 
@@ -484,7 +484,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      update tb_book set name='java编程思想(第二版)' where id = 1;
      ```
 
-     ![image-20210708215114401](/Users/breeze/Library/Application Support/typora-user-images/image-20210708215114401.png)
+     ![image-20210708215114401](https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2045%201635392625%201635392625595%20y67Fan%20image-20210708215114401.png)
 
      更新成功;
 
@@ -496,11 +496,11 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
      select * from tb_book;
      ```
 
-     ![image-20210708215220428](/Users/breeze/Library/Application Support/typora-user-images/image-20210708215220428.png)
+     ![image-20210708215220428](https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2046%201635392626%201635392626177%20TcFtTr%20image-20210708215220428.png)
 
 当在客户端一中释放锁指令 unlock tables 后 ， 客户端二中的 select 语句 ， 立即执行 ;
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210708215247275.png" alt="image-20210708215247275" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2046%201635392626%201635392626675%20j3ZmxC%20image-20210708215247275.png" alt="image-20210708215247275" style="zoom:50%;" />
 
 
 
@@ -518,7 +518,7 @@ INSERT INTO tb_user (id, name) VALUES(NULL,'田伯光');
 show open tables;
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210708222059172.png" alt="image-20210708222059172" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2047%201635392627%201635392627338%20MhnMsB%20image-20210708222059172.png" alt="image-20210708222059172" style="zoom:50%;" />
 
 - In_user : 表当前被查询使用的次数。如果该数为零，则表是打开的，但是当前没有被使用。 
 - Name_locked:表名称是否被锁定。名称锁定用于取消表或对表进行重命名等操作
@@ -527,7 +527,7 @@ show open tables;
 show status like 'Table_locks%';
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210708222314923.png" alt="image-20210708222314923" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2048%201635392628%201635392628651%203Gw1ar%20image-20210708222314923.png" alt="image-20210708222314923" style="zoom:50%;" />
 
 - Table_locks_immediate : 指的是能够立即获得表级锁的次数，每立即获取锁，值加1。
 - Table_locks_waited : 指的是不能立即获取表级锁而需要等待的次数，每等待一次，该值加1，此值高说明存在着
@@ -581,7 +581,7 @@ show status like 'Table_locks%';
   show variable like 'tx_isolation';	
   ```
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709151526412.png" alt="image-20210709151526412" style="zoom:50%;float:left" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2049%201635392629%201635392629376%20GYHs7d%20image-20210709151526412.png" alt="image-20210709151526412" style="zoom:50%;float:left" />
 
 
 
@@ -629,7 +629,7 @@ create index idx_test_innodb_lock_id on test_innodb_lock(id);
 create index idx_test_innodb_lock_name on test_innodb_lock(name);
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709152339221.png" alt="image-20210709152339221" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2050%201635392630%201635392630082%2056Dkyi%20image-20210709152339221.png" alt="image-20210709152339221" style="zoom:50%;" />
 
 
 
@@ -643,9 +643,9 @@ create index idx_test_innodb_lock_name on test_innodb_lock(name);
 show index from test_innodb_lock ;
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709152502306.png" alt="image-20210709152502306" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2051%201635392631%201635392631446%207iIPS9%20image-20210709152502306.png" alt="image-20210709152502306" style="zoom:50%;" />
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709152524745.png" alt="image-20210709152524745" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2052%201635392632%201635392632365%207LMw2X%20image-20210709152524745.png" alt="image-20210709152524745" style="zoom:50%;" />
 
 由于执行更新时,name字段本来为varchar类型,我们是作为数组类型使用,存在类型转换,索引失效,最终行锁变为表锁 ;
 
@@ -655,7 +655,7 @@ show index from test_innodb_lock ;
 
 当我们用范围条件，而不是使用相等条件检索数据，并请求共享或排他锁时，InnoDB会给符合条件的已有数据进行加锁; 对于键值在条件范围内但并不存在的记录，叫做 "间隙(GAP)" ， InnoDB也会对这个 "间隙" 加锁，这种锁机制就是所谓的 间隙锁(Next-Key锁) 。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709153306599.png" alt="image-20210709153306599" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2053%201635392633%201635392633256%20nCFNgP%20image-20210709153306599.png" alt="image-20210709153306599" style="zoom:50%;" />
 
 
 
@@ -665,7 +665,7 @@ show index from test_innodb_lock ;
 show status like 'innodb_row_lock%';
 ```
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709154016985.png" alt="image-20210709154016985" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2054%201635392634%201635392634324%20rYDK7S%20image-20210709154016985.png" alt="image-20210709154016985" style="zoom:50%;float:left" />
 
 ```mysql
 Innodb_row_lock_current_waits: 当前正在等待锁定的数量 
@@ -743,7 +743,7 @@ LIMIT       <limit_params>
 
 正则表达式(Regular Expression)是指一个用来描述或者匹配一系列符合某个句法规则的字符串的单个字符串。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709162031239.png" alt="image-20210709162031239" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2055%201635392635%201635392635023%20R36s5Z%20image-20210709162031239.png" alt="image-20210709162031239" style="zoom:50%;" />
 
 ```mysql
 select * from emp where name regexp '^T'; 
@@ -759,22 +759,22 @@ select * from emp where name regexp '[uvw]';
 
 - **数字函数**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709162127628.png" alt="image-20210709162127628" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2055%201635392635%201635392635994%20zuCIHa%20image-20210709162127628.png" alt="image-20210709162127628" style="zoom:50%;" />
 
 
 
 - **字符串函数**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709162143247.png" alt="image-20210709162143247" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2056%201635392636%201635392636957%20AxY9gz%20image-20210709162143247.png" alt="image-20210709162143247" style="zoom:50%;" />
 
 
 
 - **日期函数**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709162159880.png" alt="image-20210709162159880" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2058%201635392638%201635392638011%20Ym5TAv%20image-20210709162159880.png" alt="image-20210709162159880" style="zoom:50%;" />
 
 
 
 - **聚合函数**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210709162219291.png" alt="image-20210709162219291" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SQL/SQL/2021%2010%2028%2011%2043%2059%201635392639%201635392639174%20yiOnPV%20image-20210709162219291.png" alt="image-20210709162219291" style="zoom:50%;" />
