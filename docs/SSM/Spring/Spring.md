@@ -1,6 +1,6 @@
 
 
-## 📚1: 概述
+## D1: 概述
 
 ### P1: 概述
 
@@ -26,7 +26,7 @@
 
 ### P2: Spring模块划分
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210714234336602.png" alt="image-20210714234336602" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Spring/2021%2010%2028%2014%2021%2028%201635402088%201635402088673%20tAaXr1%20image-20210714234336602.png" alt="image-20210714234336602" style="zoom:50%;float:left" />
 
 - **核心容器：**
 
@@ -44,7 +44,7 @@
 
   
 
-## 📚2: IOC容器和bean的配置
+## D2: IOC容器和bean的配置
 
 ### P1: IOC 和 DI：
 
@@ -204,7 +204,7 @@
 
 
 
-## 📚3: AOP 
+## D3: AOP 
 
 ### P1: 概述
 
@@ -312,7 +312,7 @@ public class AOPTest {
 
 ### P2: AOP专业术语
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210701141208251.png" alt="image-20210701141208251" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Spring/2021%2010%2028%2014%2021%2035%201635402095%201635402095098%20xyEm0Y%20image-20210701141208251.png" alt="image-20210701141208251" style="zoom:50%;float:left" />
 
 
 
@@ -442,7 +442,7 @@ public class LogUtils {
 * @**Around通知**
 * **多切面运行**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210701141228719.png" alt="image-20210701141228719" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Spring/2021%2010%2028%2014%2021%2036%201635402096%201635402096255%20TsuZL2%20image-20210701141228719.png" alt="image-20210701141228719" style="zoom:50%;float:left" />
 
 
 
@@ -466,7 +466,7 @@ public class LogUtils {
 
 
 
-## 📚4: 事务
+## D4: 事务
 
 * **事务（ACID）:**
   * **原子性（Atomicity）:**
@@ -511,7 +511,7 @@ public class LogUtils {
     * **不可重复读:**
       * 01读取了age值为20;
       * 02将age修改为30;
-      * 01再次读取age值为30,可第一次读取不一致;
+      * 01再次读取age值为30,和第一次读取不一致;
     * **幻读:**
       * 01读取了Student表中的一部分数据;
       * 02向Student表中插入了新的行;
@@ -561,7 +561,7 @@ public class LogUtils {
     * 捕获到编译时异常不回滚;
   * 设置:
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210701141311696.png" alt="image-20210701141311696" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Spring/2021%2010%2028%2014%2021%2037%201635402097%201635402097500%2012BBb8%20image-20210701141311696.png" alt="image-20210701141311696" style="zoom:50%;float:left" />
 
 
 
@@ -583,13 +583,13 @@ public class LogUtils {
 
       * REQUIRED_NEW:当前的方法必须启动新事务,并在自己的事务内运行,如果有事务正在运行,应该将它挂起;
 
-        <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210701141332481.png" alt="image-20210701141332481" style="zoom:50%;float:left" />
+        <img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Spring/2021%2010%2028%2014%2021%2038%201635402098%201635402098941%203D8AZz%20image-20210701141332481.png" alt="image-20210701141332481" style="zoom:50%;float:left" />
 
   - 一些问题:
 
-    <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210701141423894.png" alt="image-20210701141423894" style="zoom:50%;float:left" />
+    <img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Spring/2021%2010%2028%2014%2021%2039%201635402099%201635402099894%20xeZVDM%20image-20210701141423894.png" alt="image-20210701141423894" style="zoom:50%;float:left" />
 
-  - <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210701141452812.png" alt="image-20210701141452812" style="zoom:50%;float:left" />
+  - <img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Spring/2021%2010%2028%2014%2021%2041%201635402101%201635402101108%20Bjfsc7%20image-20210701141452812.png" alt="image-20210701141452812" style="zoom:50%;float:left" />
 
     任何处崩,已经执行的REQUIRES_NEW都会成功
 
@@ -602,7 +602,7 @@ public class LogUtils {
 
   * 如果在bookService中写一个mulTx()方法直接调用上面两个方法,大事务中出了问题,这两个方法还是会回滚;
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210701141545293.png" alt="image-20210701141545293" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SSM/Spring/2021%2010%2028%2014%2021%2042%201635402102%201635402102079%202uXAaZ%20image-20210701141545293.png" alt="image-20210701141545293" style="zoom:50%;float:left" />
 
 
 

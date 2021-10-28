@@ -23,7 +23,7 @@
 
 ### P2: spring框架图
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210701141631083.png" alt="image-20210701141631083" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SSM/SpringMVC/2021%2010%2028%2014%2020%2007%201635402007%201635402007655%20mFVyCi%20image-20210701141631083.png" alt="image-20210701141631083" style="zoom:50%;float:left" />
 
 
 
@@ -120,7 +120,7 @@ web.xml中配置DispatcherServlet(是个servlet不是filter)
 
 ### P5: Spring执行流程
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210701141651013.png" alt="image-20210701141651013" style="zoom:50%;float:left" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/SSM/SpringMVC/2021%2010%2028%2014%2020%2009%201635402009%201635402009295%2068Tlb5%20image-20210701141651013.png" alt="image-20210701141651013" style="zoom:50%;float:left" />
 
 
 
@@ -307,7 +307,7 @@ Spring提供了对Rest风格的支持
 - **HiddenHttpMethodFilter过滤器源码分析** 
   - 为什么请求隐含参数名称必须叫作"_method"
 
-    ​                   <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20210716142445504.png" alt="image-20210716142445504" style="zoom:50%;float:left" />            
+    ​                   <img src="https://gitee.com/breeze1002/upic/raw/master/SSM/SpringMVC/2021%2010%2028%2014%2020%2010%201635402010%201635402010208%20dYrUJg%20image-20210716142445504.png" alt="image-20210716142445504" style="zoom:50%;float:left" />            
 
 
 
