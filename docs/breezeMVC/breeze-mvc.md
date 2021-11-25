@@ -20,9 +20,6 @@
 BreezeMVC
 ├── README.md -- 项目开发/总结文档
 ├── breeze-mvc-core -- 实现mvc功能的核心代码
-├── breezemvc-springboot-autoconfigure -- BreezeMVC的自动化配置
-├── breezemvc-springboot-demo -- BreezeMVC的demo项目
-├── breezemvc-springboot-starter -- BreezeMVC的starter
 └── spring-mvc-demo -- SpringMVC 参考demo
 ```
 
@@ -1366,7 +1363,7 @@ public class HandlerMethodReturnValueHandlerComposite implements HandlerMethodRe
 *		过程中会使用到数据转换，定义了ConversionService
 *	4.调用方法之前getMethodArgumentValues获取到方法的参数
 * 5.解析完所有参数，通过反射调用控制器中的方法
-* 6.执行完成后判断返回值是否为空，如果为空需要判断当前的response是否已经提交（有可能用户直接在控制的方		  法中使用response输出内容到前端），已提交标记本次请求已经处理完成mavContainer.setRequestHandled(true);		   
+* 6.执行完成后判断返回值是否为空，如果为空需要判断当前的response是否已经提交（有可能用户直接在控制的方法中使用response输出内容到前端），已提交标记本次请求已经处理完成mavContainer.setRequestHandled(true);		   
 */
 public class InvocableHandlerMethod extends HandlerMethod {
     private ParameterNameDiscoverer parameterNameDiscoverer = new DefaultParameterNameDiscoverer();
@@ -1626,7 +1623,7 @@ public class RequestMappingHandlerAdapter implements HandlerAdapter, Initializin
 
 - 本节通过开发`RequestMappingHandlerAdapter`，把我们之前开发的多个组件都组合起来了，并且能够正确的工作。
 - **和SpringMVC相比存在的不足**
-  - SpringMVC中`HandlerAdapter`有多个实现类，都有不同的使用方式，而`RequestMappingHandlerAdapter`是使用最多的一个
+  - SpringMVC中`HandlerAdapter`有多个实现类，都有不同的使用方式（HttpRequest）（SimpleServlet），而`RequestMappingHandlerAdapter`是使用最多的一个
 
 
 

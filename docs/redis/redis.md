@@ -24,7 +24,7 @@
 
   - Neo4j,infoGrid
 
-    ### 			
+    
 
 ### P2: 四大类-对比
 
@@ -76,25 +76,6 @@
 
 
 ## Redis:
-
-### P1: 安装
-
-```linux命令
-1.redis官网下载压缩文件,拷贝到 /opt 目录
-2.在/opt 目录下 : sudo tar -zxvf redis-6.2.1.tar.gz 解压
-3.进入redis安装后的目录 ls -l 查看  
-4.sudo make命令
-5.sudo make install命令
-6.cd /usr/local/bin 目录 查看是否安装完毕
-7.拷贝redis安装的目录里的 redis.conf文件到新建的文件夹: sudo cp redis.conf /myredis/
-8.修改myredis中的redis.conf配置文件 sudo vim redis.conf  将daemon设置成yes
-9.进入bin目录:  redis-server /myredis/redis.conf 接着 redis-cli -p 6379
-10.ping命令 得到pong的回馈
-11.ps -ef|grep redis命令查看redis运行状态
-
-```
-
-
 
 ### P2: 杂项知识
 
@@ -331,13 +312,13 @@
 - **持久化过程:**
   - Redis会单独创建(Fork)一个子进程来进行持久化,会先将数据写入到一个临时文件中,等到持久化过程结束,再用这个临时文件替换上次持久化好的文件.	
     - **Fork**
-      - Fork的作用是复制一个与当前进程一样的进程。新进程的所有数据（变量、环境变量‘程序计数器等）数值都和原进程一致，但是是一个全新的进程，并作为原进程的子进程。
+      - Fork的作用是复制一个与当前进程一样的进程。新进程的所有数据（变量、环境变量、程序计数器等）数值都和原进程一致，但是是一个全新的进程，并作为原进程的子进程。
   - 整个过程中,主进程不进行任何I/O操作,这就确保了极高的性能
   - 最终保存的是 dump.rdb文件
 - **如何触发RDB快照:**
   - 配置文件中的配置 (可更改
     - 默认:
-      - 一小时1次
+      - 15分钟1次
       - 五分钟100次
       - 一分钟10000次
   - save/bgsave命令:
