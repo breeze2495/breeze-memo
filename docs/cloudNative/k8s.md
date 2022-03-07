@@ -81,7 +81,7 @@ PID  USER   TIME COMMAND
 
 **虚拟机技术和docker技术 底层实现对比**
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220127103252119.png" alt="image-20220127103252119" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2015%20554NmwwE%20image-20220127103252119.png" alt="image-20220127103252119" style="zoom:50%;" />
 
 Hypervisor 的软件是虚拟机最主要的部分。它通过**硬件虚拟化功能**，模拟出了运行一个操作系统需要的各种硬件，比如 CPU、内存、I/O 设备等等。然后，它在这些虚拟的硬件上安装了一个新的操作系统，即 Guest OS。
 
@@ -248,7 +248,7 @@ $ tree ./C
 
 **一个容器的rootfs由三部分组成：** 使用Ubuntu
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220127142751345.png" alt="image-20220127142751345" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2015%2057GAsO6p%20image-20220127142751345.png" alt="image-20220127142751345" style="zoom:50%;" />
 
 **第一部分：只读层**
 
@@ -274,7 +274,7 @@ $ tree ./C
 
 ### D4: k8s本质
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220127172551343.png" alt="image-20220127172551343" style="zoom:30%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2015%2059WwKUOf%20image-20220127172551343.png" alt="image-20220127172551343" style="zoom:30%;" />
 
 
 
@@ -784,7 +784,7 @@ spec:
 
 对于一个 Deployment 所管理的 Pod，它的 ownerReference 是：ReplicaSet
 
-![image-20220131144107827](/Users/breeze/Library/Application Support/typora-user-images/image-20220131144107827.png)
+![image-20220131144107827](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2000RDpYsJ%20image-20220131144107827.png)
 
 通过这张图，我们就很清楚地看到，一个定义了 replicas=3 的 Deployment，与它的 ReplicaSet，以及 Pod 的关系，实际上是一种“层层控制”的关系。
 
@@ -1130,7 +1130,7 @@ $ docker run –d –net=host --name nginx-host nginx
 
 如果我们通过软件的方式，创建一个整个集群“公用”的网桥，然后把集群里的所有容器都连接到这个网桥上，不就可以相互通信了吗？
 
-![image-20220207145449837](/Users/breeze/Library/Application Support/typora-user-images/image-20220207145449837.png)
+![image-20220207145449837](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2001aInkQ1%20image-20220207145449837.png)
 
 可以看到，构建这种容器网络的核心在于：我们需要在已有的宿主机网络上，再通过软件构建一个覆盖在已有宿主机网络之上的、可以把所有容器连通在一起的虚拟网络。所以，这种技术就被称为：**Overlay Network（覆盖网络）**。
 
@@ -1262,7 +1262,7 @@ default via 10.168.0.1 dev eth0
 
 **以上，就是基于 Flannel UDP 模式的跨主通信的基本原理了。**
 
-![image-20220207160623576](/Users/breeze/Library/Application Support/typora-user-images/image-20220207160623576.png)
+![image-20220207160623576](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%20029gIqhH%20image-20220207160623576.png)
 
 可以看到，**Flannel UDP 模式提供的其实是一个三层的 Overlay 网络**，即：它首先对发出端的 IP 包进行 UDP 封装，然后在接收端进行解封装拿到原始的 IP 包，进而把这个 IP 包转发给目标容器。这就好比，Flannel 在不同宿主机上的两个容器之间打通了一条“隧道”，使得这两个容器可以直接使用 IP 地址进行通信，而无需关心容器和宿主机的分布情况。
 
@@ -1272,7 +1272,7 @@ default via 10.168.0.1 dev eth0
 
 相比于两台宿主机之间的直接通信，基于 Flannel UDP 模式的容器通信多了一个额外的步骤，即 flanneld 的处理过程。而这个过程，由于使用到了 flannel0 这个 TUN 设备，仅在发出 IP 包的过程中，就需要经过三次用户态与内核态之间的数据拷贝，如下所示：
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220207160947508.png" alt="image-20220207160947508" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2004o0wPo8%20image-20220207160947508.png" alt="image-20220207160947508" style="zoom:50%;" />
 
 我们可以看到：
 
@@ -1300,7 +1300,7 @@ VXLAN 的覆盖网络的**设计思想**是：**在现有的三层网络之上�
 
 而 VTEP 设备的作用，其实跟前面的 flanneld 进程非常相似。只不过，它进行封装和解封装的对象，是二层数据帧（Ethernet frame）；而且这个工作的执行流程，**全部是在内核里完成的（因为 VXLAN 本身就是 Linux 内核中的一个模块）**。上述基于 VTEP 设备进行“隧道”通信的流程，我也为你总结成了一幅图，如下所示：
 
-![image-20220207204301335](/Users/breeze/Library/Application Support/typora-user-images/image-20220207204301335.png)
+![image-20220207204301335](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%20071BwEoj%20image-20220207204301335.png)
 
 图中**每台宿主机上名叫 flannel.1 的设备，就是 VXLAN 所需的 VTEP 设备，它既有 IP 地址，也有 MAC 地址。**
 
@@ -1352,7 +1352,7 @@ $ ip neigh show dev flannel.1
 
 有了这个“目的 VTEP 设备”的 MAC 地址，Linux 内核就可以开始二层封包工作了。这个二层帧的格式，如下所示：
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220208185954547.png" alt="image-20220208185954547" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2008kXzotF%20image-20220208185954547.png" alt="image-20220208185954547" style="zoom:50%;" />
 
 可以看到，Linux 内核会**把“目的 VTEP 设备”的 MAC 地址，填写在图中的 Inner Ethernet Header 字段，得到一个二层数据帧**。
 
@@ -1405,7 +1405,7 @@ $ bridge fdb show flannel.1 | grep 5e:f8:4f:00:e3:37
 
 这时候，我们封装出来的“**外部数据帧**”的格式，如下所示：
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220208191131350.png" alt="image-20220208191131350" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2009qUpqBr%20image-20220208191131350.png" alt="image-20220208191131350" style="zoom:50%;" />
 
 这样，封包工作就宣告完成了。
 
@@ -1441,7 +1441,7 @@ $ bridge fdb show flannel.1 | grep 5e:f8:4f:00:e3:37
 
 以 Flannel 的 VXLAN 模式为例，在 Kubernetes 环境里，它的工作方式跟我们在上一篇文章中没有任何不同。只不过，docker0 网桥被替换成了 CNI 网桥而已，如下所示：
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220208192012026.png" alt="image-20220208192012026" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2010TOM13L%20image-20220208192012026.png" alt="image-20220208192012026" style="zoom:50%;" />
 
 在这里，Kubernetes 为 Flannel 分配的子网范围是 10.244.0.0/16。这个参数可以在部署的时候指定，比如：
 
@@ -1920,7 +1920,7 @@ spec:
 
 在 Kubernetes 中，上述调度机制的工作原理，可以用如下所示的一幅示意图来表示。
 
-![image-20220210110909140](/Users/breeze/Library/Application Support/typora-user-images/image-20220210110909140.png)
+![image-20220210110909140](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2011ofhUt7%20image-20220210110909140.png)
 
 可以看到，**Kubernetes 的调度器的核心，实际上就是两个相互独立的控制循环。**
 
@@ -1976,7 +1976,7 @@ Assume 之后，调度器才会创建一个 **Goroutine** 来异步地向 APISer
 
 而 Kubernetes **默认调度器的可扩展性设计**，可以用如下所示的一幅示意图来描述：
 
-![image-20220210141305833](/Users/breeze/Library/Application Support/typora-user-images/image-20220210141305833.png)
+![image-20220210141305833](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2012US9AKr%20image-20220210141305833.png)
 
 可以看到，默认调度器的可扩展机制，在 Kubernetes 里面叫作 **Scheduler Framework**。
 
@@ -2410,7 +2410,7 @@ Status:
 
 Kubernetes 的 **Device Plugin** 机制，我可以用如下所示的一幅示意图来和你解释清楚。
 
-![image-20220212151009594](/Users/breeze/Library/Application Support/typora-user-images/image-20220212151009594.png)
+![image-20220212151009594](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2013KKowMR%20image-20220212151009594.png)
 
 我们先从这幅示意图的右侧开始看起。
 
@@ -2499,7 +2499,7 @@ SIG-Node 以及 kubelet，其实是 Kubernetes 整套体系里非常核心的一
 
 当然， kubelet 本身，也是按照“控制器”模式来工作的。它实际的工作原理，可以用如下所示的一幅示意图来表示清楚。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220209100446924.png" alt="image-20220209100446924" style="zoom: 25%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2016gaLGv4%20image-20220209100446924.png" alt="image-20220209100446924" style="zoom: 25%;" />
 
 可以看到，kubelet 的工作核心，就是一个控制循环，即：SyncLoop（图中的大圆圈）。
 
@@ -2555,7 +2555,7 @@ SIG-Node 以及 kubelet，其实是 Kubernetes 整套体系里非常核心的一
 
 而在有了 CRI 之后，Kubernetes 以及 kubelet 本身的架构，就可以用如下所示的一幅示意图来描述。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220209105048650.png" alt="image-20220209105048650" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%20170hKgRL%20image-20220209105048650.png" alt="image-20220209105048650" style="zoom:50%;" />
 
 可以看到，当 Kubernetes 通过编排能力创建了一个 Pod 之后，调度器会为这个 Pod 选择一个具体的节点来运行。这时候，kubelet 当然就会通过前面讲解过的 SyncLoop 来判断需要执行的具体操作，比如创建一个 Pod。
 
@@ -2581,7 +2581,7 @@ SIG-Node 以及 kubelet，其实是 Kubernetes 整套体系里非常核心的一
 
 简要回顾有个CRI之后，k8s的架构图：
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220209105048650.png" alt="image-20220209105048650" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%20170hKgRL%20image-20220209105048650.png" alt="image-20220209105048650" />
 
 在上一篇文章中提到，CRI 机制能够发挥作用的核心，就在于**每一种容器项目现在都可以自己实现一个 CRI shim，自行对 CRI 请求进行处理**。这样，**Kubernetes 就有了一个统一的容器抽象层，使得下层容器运行时可以自由地对接进入 Kubernetes 当中**。
 
@@ -2593,13 +2593,13 @@ CNCF 里的 **containerd** 项目，就可以提供一个典型的 CRI shim 的�
 
 而 **runC** 项目，才是负责执行我们前面讲解过的设置容器 Namespace、Cgroups 和 chroot 等基础操作的组件。所以，这几层的组合关系，可以用如下所示的示意图来描述。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220209112348199.png" alt="image-20220209112348199" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2018uTJjBl%20image-20220209112348199.png" alt="image-20220209112348199" style="zoom:50%;" />
 
 **而作为一个 CRI shim，containerd 对 CRI 的具体实现，又是怎样的呢？**
 
 我们先来看一下 CRI 这个接口的定义。下面这幅示意图，就展示了 CRI 里主要的待实现接口。
 
-<img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220209112512699.png" alt="image-20220209112512699" style="zoom:50%;" />
+<img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%20196ZAc7c%20image-20220209112512699.png" alt="image-20220209112512699" style="zoom:50%;" />
 
 具体地说，**我们可以把 CRI 分为两组：**
 
@@ -2625,7 +2625,7 @@ CNCF 里的 **containerd** 项目，就可以提供一个典型的 CRI shim 的�
 
 而作为具体的容器项目，你就需要自己决定如何使用这些字段来实现一个 Kubernetes 期望的 Pod 模型。这里的原理，可以用如下所示的示意图来表示清楚。
 
-![image-20220209133642073](/Users/breeze/Library/Application Support/typora-user-images/image-20220209133642073.png)
+![image-20220209133642073](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2021wDTXxn%20image-20220209133642073.png)
 
 比如，<u>当我们执行 kubectl run 创建了一个名叫 foo 的、包括了 A、B 两个容器的 Pod 之后。这个 Pod 的信息最后来到 kubelet，kubelet 就会按照图中所示的顺序来调用 CRI 接口。</u>
 
@@ -2643,7 +2643,7 @@ CNCF 里的 **containerd** 项目，就可以提供一个典型的 CRI shim 的�
 
 CRI shim 里对 Streaming API 的实现，依赖于一套独立的 Streaming Server 机制。这一部分原理，可以用如下所示的示意图来描述。
 
-![image-20220209135518858](/Users/breeze/Library/Application Support/typora-user-images/image-20220209135518858.png)
+![image-20220209135518858](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2022WSAcrN%20image-20220209135518858.png)
 
 可以看到，当我们**对一个容器执行 kubectl exec 命令的时候**，这个请求首先交给 API Server，然后 API Server 就会调用 kubelet 的 Exec API。
 
@@ -2697,7 +2697,7 @@ CRI shim 里对 Streaming API 的实现，依赖于一套独立的 Streaming Ser
 
 作为一个监控系统，Prometheus 项目的作用和工作方式，其实可以用如下所示的一张官方示意图来解释。
 
-![image-20220209150401508](/Users/breeze/Library/Application Support/typora-user-images/image-20220209150401508.png)
+![image-20220209150401508](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2023oQYyDf%20image-20220209150401508.png)
 
 可以看到，Prometheus 项目工作的核心，是使用 **Pull** （抓取）的方式去搜集被监控对象的 **Metrics** 数据（监控指标数据），然后，再把这些数据保存在一个 **TSDB** （时间序列数据库，比如 OpenTSDB、InfluxDB 等）当中，以便后续可以按照时间进行检索。
 
@@ -2747,7 +2747,7 @@ http://127.0.0.1:8001/apis/metrics.k8s.io/v1beta1/namespaces/<namespace-name>/po
 
 这里，Aggregator APIServer 的工作原理，可以用如下所示的一幅示意图来表示清楚：
 
-![image-20220209153152523](/Users/breeze/Library/Application Support/typora-user-images/image-20220209153152523.png)
+![image-20220209153152523](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2024W4Jzj1%20image-20220209153152523.png)
 
 可以看到，当 Kubernetes 的 API Server 开启了 **Aggregator** 模式之后，你再访问 apis/metrics.k8s.io/v1beta1 的时候，实际上访问到的是一个叫作 **kube-aggregator 的代理**。
 
@@ -2825,7 +2825,7 @@ $ kubectl create -f deploy/1.8+/
 
 - **第一种，在 Node 上部署 logging agent，将日志文件转发到后端存储里保存起来**。这个方案的架构图如下所示。
 
-  <img src="/Users/breeze/Library/Application Support/typora-user-images/image-20220209162136151.png" alt="image-20220209162136151" style="zoom:50%;" />
+  <img src="https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%20252XfEE6%20image-20220209162136151.png" alt="image-20220209162136151" style="zoom:50%;" />
 
 不难看到，这里的核心就在于 **logging agent** ，它一般都会以 DaemonSet 的方式运行在节点上，然后将宿主机上的容器日志目录挂载进去，最后由 logging-agent 把日志转发出去。
 
@@ -2841,7 +2841,7 @@ $ kubectl create -f deploy/1.8+/
 
 - **第二种方案，就是对这种特殊情况的一个处理**，即：当容器的日志只能输出到某些文件里的时候，我们可以通过一个 sidecar 容器把这些日志文件重新输出到 sidecar 的 stdout 和 stderr 上，这样就能够继续使用第一种方案了。这个方案的具体工作原理，如下所示。
 
-  ![image-20220209164301579](/Users/breeze/Library/Application Support/typora-user-images/image-20220209164301579.png)
+  ![image-20220209164301579](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2028bS7o8t%20image-20220209164301579.png)
 
 比如，现在我的应用 Pod 只有一个容器，它会把日志输出到容器里的 /var/log/1.log 和 2.log 这两个文件里。这个 Pod 的 YAML 文件如下所示：
 
@@ -2942,7 +2942,7 @@ Mon Jan 1 00:00:02 UTC 2001 INFO 2
 
 - **第三种方案，就是通过一个 sidecar 容器，直接把应用的日志文件发送到远程存储里面去。**也就是相当于把方案一里的 logging agent，放在了应用 Pod 里。这种方案的架构如下所示：
 
-  ![image-20220209165114942](/Users/breeze/Library/Application Support/typora-user-images/image-20220209165114942.png)
+  ![image-20220209165114942](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2031fyyJKh%20image-20220209165114942.png)
 
 在这种方案里，你的应用还**可以直接把日志输出到固定的文件里而不是 stdout**，你的 logging-agent 还可以使用 fluentd，后端存储还可以是 ElasticSearch。只不过， fluentd 的输入源，变成了应用的日志文件。一般来说，我们会把 fluentd 的输入源配置保存在一个 ConfigMap 里，如下所示：
 
@@ -3032,7 +3032,7 @@ spec:
 
 除此之外，还有一种方式就是**在编写应用的时候，就直接指定好日志的存储后端**，如下所示：
 
-![image-20220209165819235](/Users/breeze/Library/Application Support/typora-user-images/image-20220209165819235.png)
+![image-20220209165819235](https://gitee.com/breeze1002/upic/raw/master/cloudNative/k8s/2022%2003%2007%2011%2016%2033w3OoZ2%20image-20220209165819235.png)
 
 在这种方案下，Kubernetes 就完全不必操心容器日志的收集了，这**对于本身已经有完善的日志处理系统的公司来说，是一个非常好的选择。**
 
